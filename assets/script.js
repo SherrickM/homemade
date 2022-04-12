@@ -1,3 +1,4 @@
+// api for spoonacular that grabs recipies based off ingredients list
 const settings = {
 	"async": true,
 	"crossDomain": true,
