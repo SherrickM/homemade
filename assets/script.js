@@ -44,10 +44,10 @@ function storeIngredients(){
 }
 
 $("#addIngredientsButton").click(function(){
+    var userInput = $("#userInputIngredientText").val();
     if(userInput !== null){
-        renderIngredientsList();
-        var userInput = $("#userInputIngredientText").val();
         ingredientsList.push(userInput);
+        renderIngredientsList();
         storeIngredients();
 
     };
