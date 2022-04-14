@@ -53,7 +53,7 @@
 
 } */
 
-#searchBtn{
+/* #searchBtn{
     position: relative;
     top:-180px;
 }
@@ -61,4 +61,8 @@
     position: relative;
     top:-70px;
 
+} */
+
+#ingredientsListSaved {
+    height: 400px;
 }
