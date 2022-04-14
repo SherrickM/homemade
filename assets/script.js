@@ -1,20 +1,20 @@
 // api for spoonacular that grabs recipies based off ingredients list
-const settings = {
-	"async": true,
-	"crossDomain": true,
-	"url": "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?ingredients=apples%2Cflour%2Csugar&number=5&ignorePantry=true&ranking=1",
-	"method": "GET",
-	"headers": {
-		"X-RapidAPI-Host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-		"X-RapidAPI-Key": "c4da594f4amsh53139c876b46e00p155ca6jsn0a6b630dd26b"
-	}
-};
+// const settings = {
+// 	"async": true,
+// 	"crossDomain": true,
+// 	"url": "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?ingredients=apples%2Cflour%2Csugar&number=5&ignorePantry=true&ranking=1",
+// 	"method": "GET",
+// 	"headers": {
+// 		"X-RapidAPI-Host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+// 		"X-RapidAPI-Key": "d814cc11a8744e6bb7d9a18faa6b7f17"
+// 	}
+// };
 
-$.ajax(settings).done(function (response) {
-	console.log(response);
-});
-
-fetch('https://upenn-cors-anywhere.herokuapp.com/https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood')
+// $.ajax(settings).done(function (response) {
+// 	console.log(response);
+// });
+// fetch("https://api.spoonacular.com/recipes/complexSearch?query=pasta&maxFat=25&number=2&apiKey=d814cc11a8744e6bb7d9a18faa6b7f17")
+fetch('https://api.spoonacular.com/recipes/716429/information?apiKey=cb1c464d94f142c08b156c5beddade8b&includeNutrition=false')
 .then(function (response) {
     return response.json();
 }) .then(function (data) {
