@@ -155,7 +155,7 @@ Alternatively if you want to just have a single hero
             
 
 
-                    <div id="searchbuttonandlistSave" class="grid-rows-4 border border-gray-600">
+                    <div id="searchbuttonandlistSave" class=" mr-2 grid-rows-4 border border-gray-600">
 
                                     <div id="togglebtn" class=" flex justify-around p-4">
 
@@ -168,13 +168,16 @@ Alternatively if you want to just have a single hero
 
                                         </div>
 
-                                        <div class="relative inline-block w-10 mr-2 align-middle select-none">
-                                            <input type="checkbox" name="toggle" id="Blue" class="checked:bg-blue-500 outline-none focus:outline-none right-4 checked:right-0 duration-200 ease-in absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"/>
-                                                <label for="Blue" class="block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer">
-                                                </label>
+                                        <div class="flex justify-center items-center ">
+                                            <!-- Switch Container -->
+                                            <div class="w-14 h-7 flex items-center bg-gray-300 rounded-full mx-3 px-1 bg-blue-700" @click="handleToggleActive">
+                                                <!-- Switch -->
+                                                <div class="bg-white w-5 h-5 rounded-full shadow-md transform translate-x-7"></div>
+                                            </div>
+                                            
                                         </div>
 
-                                        <div class="">
+                                        <div class="text-4xl">
                                             <h1>
                                                 DRINK
                                             </h1>
@@ -205,7 +208,7 @@ Alternatively if you want to just have a single hero
                                                                         <li id="listbox-item-0" role="option" class="text-gray-900 h-20 cursor-default hover:text-gray-500 select-none relative py-2 pl-3 pr-9">
                                                                             <div class = "grid grid-cols-12 h-16">
                                                                                     <div class="flex items-center col-span-10 border border-gray-200 h-auto">
-                                                                                        <span class="ml-3 block truncate text-lg">
+                                                                                        <span class="ml-3 block truncate text-lg font-bold font-gray-800">
                                                                                             Pasta
                                                                                         </span>
                                                                                     </div>
@@ -232,11 +235,10 @@ Alternatively if you want to just have a single hero
                     </div>
 
 
-                    <div id= "recipiecarrasoul" class="flex justify-center w-5/6">
+                    <div id= "recipiecarrasoul" class="flex justify-center ml-2 border border-gray-600">
 
-
-                            <div class="flex items-center justify-center w-full h-full py-24 sm:py-8 px-4">
-                                <div class="w-full relative flex items-center justify-center">
+                            <div class="flex items-center justify-center w-full h-full ">
+                                <div class="w-full relative flex items-center justify-center h-full">
                                     <button aria-label="slide backward" class="absolute z-30 left-0 ml-10 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer" id="prev">
                                         <svg class="dark:text-gray-900" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M7 1L1 7L7 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
