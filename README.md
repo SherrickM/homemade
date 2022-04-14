@@ -14,10 +14,10 @@
 
 ## Wire Frame
 
-![WifeFrame Landing Page](/assets/images/Screen%20Shot%202022-04-13%20at%208.11.20%20PM.png)
-![Reciepe Page](/assets/images/Screen%20Shot%202022-04-13%20at%208.11.40%20PM.png)
-![About Page](/assets/images/Screen%20Shot%202022-04-13%20at%208.11.54%20PM.png)
-![Contact Page ](/assets/images/Screen%20Shot%202022-04-13%20at%208.12.04%20PM.png)
+![WifeFrame Landing Page](/assets/images/Screen%20Shot%202022-04-13%20at%209.05.58%20PM.png)
+![Reciepe Page](/assets/images/Screen%20Shot%202022-04-13%20at%209.06.16%20PM.png)
+![About Page](/assets/images/Screen%20Shot%202022-04-13%20at%209.06.23%20PM.png)
+![Contact Page ](/assets/images/Screen%20Shot%202022-04-13%20at%209.06.34%20PM.png)
 
 ## Mock Up
 
