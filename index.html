@@ -181,8 +181,8 @@ Alternatively if you want to just have a single hero
         <h1 class="mx-auto text-4xl sm:text-7xl">Find A Recipie</h1>
     </section>
 
-    <section id="belowHero" class="container h-auto mx-auto bg-white py-8 border-t border-gray-400 ">
-        <div class="container flex px-3 py-8 gap-y-5 w-full mx-auto flex flex-wrap grid-rows-2 sm:grid sm:grid-cols-2 ">
+    <section id="belowHero" class="container max-h-fit mx-auto bg-white py-8 border-t border-gray-400 ">
+        <div class="container h-fit flex px-3 py-8 gap-y-5 w-full mx-auto flex flex-wrap grid-rows-2 sm:grid-rows-1 sm:grid sm:grid-cols-2 ">
 
 
 
@@ -236,7 +236,7 @@ Alternatively if you want to just have a single hero
 
                 <div id="ingredientslistgen" class=" p-4 ">
 
-                    <div id="ulContainer" class=" w-full h-96 border rounded-md bg-white shadow-sm">
+                    <div id="ulContainer" class=" w-full h-96 max-h-96 border rounded-md bg-white shadow-sm">
                         <ul id="ingredientsListSaved" tabindex="-1" role="listbox" aria-labelledby="listbox-label"
                             aria-activedescendant="listbox-item-3" class=" py-1">
 
@@ -290,132 +290,80 @@ Alternatively if you want to just have a single hero
 
                     <div class="w-full relative flex items-center  justify-center h-full">
 
-                        <button aria-label="slide backward"
-                            class=" bg-gray-200 p-3 opacity-50 border rounded-full absolute z-30 left-0 ml-10 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer"
-                            id="prev">
-                            <svg class="text-gray-900" width="8" height="14" viewBox="0 0 8 14" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M7 1L1 7L7 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg>
-                        </button>
-                        <div id="cardRecipie" class="h-full mx-auto overflow-x-hidden overflow-y-hidden">
-                            <div id="slider"
-                                class="h-full flex lg:gap-8 md:gap-6 gap-14 transition ease-out duration-700">
-                                <div class="flex flex-shrink-0 relative w-full sm:w-auto">
+                        <div class="w-full relative flex items-center  justify-center h-full">
 
-                                    <div class="bg-white rounded w-80 mx-auto rounded-2xl shadow-lg">
-                                        <div class="bg-gray-200 h-56 p-3 overflow-hidden animate-pulse">
-                                            <img src="assets/images/dry-food-1-1574307.jpg" alt="">
+                            <button aria-label="slide backward"
+                                class=" bg-gray-200 p-3 opacity-50 border rounded-full absolute z-30 left-0 ml-10 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer"
+                                id="prev">
+                                <svg class="text-gray-900" width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 1L1 7L7 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                            <div id="cardRecipie" class="h-full mx-auto overflow-x-hidden overflow-y-hidden">
+                                <div id="slider"
+                                    class="h-full flex lg:gap-8 md:gap-6 gap-14 transition ease-out duration-700">
+                                    <div class="flex flex-shrink-0 relative w-full sm:w-auto">
+
+                                        <div class="bg-white rounded w-80 mx-auto rounded-2xl shadow-lg">
+                                            <div class="bg-gray-200 h-56 p-3 overflow-hidden animate-pulse">
+                                                <img src="assets/images/dry-food-1-1574307.jpg" alt="">
+                                            </div>
+                                            <div class=" p-3">
+                                                <div class="grid grid-cols-1 gap-4 mt-2">
+                                                    <div class="h-8 bg-gray-200 rounded animate-pulse justify-self-center">
+                                                        <h3>Name of Recipie</h3>
+                                                    </div>
+                                                    <div class="h-24 bg-gray-200 rounded animate-pulse">
+                                                        <h6>discription of recipie</h3>
+                                                    </div>
+                                                </div>
+                                                <div class="pt-2 flex justify-around">
+                                                    <div>
+                                                        <img src="assets/images/spoonacular-score-25.svg" class="badge h-12"
+                                                            alt="spoonacular Score:22%" title="spoonacular Score:22%">
+                                                        <p class="center">Score:</p>
+                                                    </div>
+                                                    <div>
+                                                        <img src="assets/images/fast.svg" class="badge h-12"
+                                                            alt="spoonacular Score:22%" title="spoonacular Score:22%">
+                                                        <p class="inline center">Time:</p>
+                                                    </div>
+
+
+                                                </div>
+
+                                                <div class="mt-10 flex justify-around items-center">
+
+                                                    <input class="pl-2 border h-10" type="text"
+                                                        placeholder="Enter your Email">
+
+                                                    <img class="h-10" src="assets/images/icons8-send-64.png"
+                                                        alt="send icon">
+
+
+                                                </div>
+
+
+                                            </div>
                                         </div>
-                                        <div class="h- p-3">
-                                            <div class="grid grid-cols-1 gap-4 mt-2">
-                                                <div class="h-8 bg-gray-200 rounded animate-pulse justify-self-center">
-                                                    <h3>Name of Recipie</h3>
-                                                </div>
-                                                <div class="h-24 bg-gray-200 rounded animate-pulse">
-                                                    <h6>discription of recipie</h3>
-                                                </div>
-                                            </div>
-                                            <div class="pt-2 flex justify-around">
-                                                <div>
-                                                    <img src="assets/images/spoonacular-score-25.svg" class="badge h-12"
-                                                        alt="spoonacular Score:22%" title="spoonacular Score:22%">
-                                                    <p class="center">Score:</p>
-                                                </div>
-                                                <div>
-                                                    <img src="assets/images/fast.svg" class="badge h-12"
-                                                        alt="spoonacular Score:22%" title="spoonacular Score:22%">
-                                                    <p class="inline center">Time:</p>
-                                                </div>
 
-
-                                            </div>
-
-                                            <div class="mt-10 flex justify-around items-center">
-
-                                                <input class="pl-2 border h-10" type="text"
-                                                    placeholder="Enter your Email">
-
-                                                <img class="h-10" src="assets/images/icons8-send-64.png"
-                                                    alt="send icon">
-
-
-                                            </div>
-
-
-                                        </div>
                                     </div>
-
-                                </div>
-                                <div class="flex flex-shrink-0 relative w-full sm:w-auto">
-
-                                    <div class="bg-white rounded w-96 mx-auto rounded-2xl shadow-lg">
-                                        <div class="bg-gray-200 h-48 p-3 overflow-hidden animate-pulse">
-                                            <img src="assets/images/dry-food-1-1574307.jpg" alt="">
-                                        </div>
-                                        <div class="h- p-3">
-                                            <div class="grid grid-cols-1 gap-4 mt-2">
-                                                <div class="h-8 bg-gray-200 rounded animate-pulse">
-                                                    <h3>Name of Recipie</h3>
-                                                </div>
-                                                <div class="h-24 bg-gray-200 rounded animate-pulse">
-                                                    <h6>Name of Recipie</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="flex flex-shrink-0 relative w-full sm:w-auto">
-
-                                    <div class="bg-white rounded w-96 mx-auto rounded-2xl shadow-lg">
-                                        <div class="bg-gray-200 h-48 p-3 overflow-hidden animate-pulse">
-                                            <img src="assets/images/dry-food-1-1574307.jpg" alt="">
-                                        </div>
-                                        <div class="h- p-3">
-                                            <div class="grid grid-cols-1 gap-4 mt-2">
-                                                <div class="h-8 bg-gray-200 rounded animate-pulse">
-                                                    <h3>Name of Recipie</h3>
-                                                </div>
-                                                <div class="h-24 bg-gray-200 rounded animate-pulse">
-                                                    <h6>Name of Recipie</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="flex flex-shrink-0 relative w-full sm:w-auto">
-
-                                    <div class="bg-white rounded w-96 mx-auto rounded-2xl shadow-lg">
-                                        <div class="bg-gray-200 h-48 p-3 overflow-hidden animate-pulse">
-                                            <img src="assets/images/dry-food-1-1574307.jpg" alt="">
-                                        </div>
-                                        <div class="h- p-3">
-                                            <div class="grid grid-cols-1 gap-4 mt-2">
-                                                <div class="h-8 bg-gray-200 rounded animate-pulse">
-                                                    <h3>Name of Recipie</h3>
-                                                </div>
-                                                <div class="h-24 bg-gray-200 rounded animate-pulse">
-                                                    <h6>Name of Recipie</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
+                                    
                                 </div>
                             </div>
+                            <button aria-label="slide forward"
+                                class="bg-gray-200 p-3 opacity-50 border rounded-full absolute z-30 right-0 mr-10 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400"
+                                id="next">
+                                <svg class="dark:text-gray-900" width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 1L7 7L1 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </button>
+
                         </div>
-                        <button aria-label="slide forward"
-                            class="bg-gray-200 p-3 opacity-50 border rounded-full absolute z-30 right-0 mr-10 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400"
-                            id="next">
-                            <svg class="dark:text-gray-900" width="8" height="14" viewBox="0 0 8 14" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 1L7 7L1 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg>
-                        </button>
 
 
                     </div>
@@ -424,7 +372,189 @@ Alternatively if you want to just have a single hero
 
 
 
+            </div>
 
+
+
+        </div>
+
+    </section>
+
+
+    <section class="mx-auto container flex justify-center mt-12">
+        <h1 class="mx-auto text-4xl sm:text-7xl">Saved Recipes</h1>
+    </section>
+    
+
+    <section id="savedRecipes" class="mx-auto container flex justify-center mt-12">
+
+        
+        
+        <div id="" class="container h-fit flex px-3 py-8 gap-y-5 w-full mx-auto flex flex-wrap grid-rows-2 sm:grid-rows-1 sm:grid sm:grid-cols-2 ">
+          
+
+            <div id="" class=" sm:mr-2 grid-rows-2 border border-gray-600">
+                <h1 class="mx-auto mb-2 text-4xl sm:text-5xl text-center">
+                    Food Recipes
+                </h1>
+
+                <div class="w-full relative flex items-center  justify-center h-full">
+
+                            <button aria-label="slide backward"
+                                class=" bg-gray-200 p-3 opacity-50 border rounded-full absolute z-30 left-0 ml-10 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer"
+                                id="prev">
+                                <svg class="text-gray-900" width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 1L1 7L7 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                            <div id="cardRecipie" class="h-full mx-auto overflow-x-hidden overflow-y-hidden">
+                                <div id="slider"
+                                    class="h-full flex lg:gap-8 md:gap-6 gap-14 transition ease-out duration-700">
+                                    <div class="flex flex-shrink-0 relative w-full sm:w-auto">
+
+                                        <div class="bg-white rounded w-80 mx-auto rounded-2xl shadow-lg">
+                                            <div class="bg-gray-200 h-56 p-3 overflow-hidden animate-pulse">
+                                                <img src="assets/images/dry-food-1-1574307.jpg" alt="">
+                                            </div>
+                                            <div class=" p-3">
+                                                <div class="grid grid-cols-1 gap-4 mt-2">
+                                                    <div class="h-8 bg-gray-200 rounded animate-pulse justify-self-center">
+                                                        <h3>Name of Recipie</h3>
+                                                    </div>
+                                                    <div class="h-24 bg-gray-200 rounded animate-pulse">
+                                                        <h6>discription of recipie</h3>
+                                                    </div>
+                                                </div>
+                                                <div class="pt-2 flex justify-around">
+                                                    <div>
+                                                        <img src="assets/images/spoonacular-score-25.svg" class="badge h-12"
+                                                            alt="spoonacular Score:22%" title="spoonacular Score:22%">
+                                                        <p class="center">Score:</p>
+                                                    </div>
+                                                    <div>
+                                                        <img src="assets/images/fast.svg" class="badge h-12"
+                                                            alt="spoonacular Score:22%" title="spoonacular Score:22%">
+                                                        <p class="inline center">Time:</p>
+                                                    </div>
+
+
+                                                </div>
+
+                                                <div class="mt-10 flex justify-around items-center">
+
+                                                    <input class="pl-2 border h-10" type="text"
+                                                        placeholder="Enter your Email">
+
+                                                    <img class="h-10" src="assets/images/icons8-send-64.png"
+                                                        alt="send icon">
+
+
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <button aria-label="slide forward"
+                                class="bg-gray-200 p-3 opacity-50 border rounded-full absolute z-30 right-0 mr-10 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400"
+                                id="next">
+                                <svg class="dark:text-gray-900" width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 1L7 7L1 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </button>
+
+                </div>
+
+            </div>
+
+
+          
+
+            <div id="" class=" grid-rows-2 border border-gray-600">
+                <h1 class="mx-auto mb-2 text-4xl sm:text-5xl text-center">Drink Recipes</h1>
+
+                        <div class="w-full relative flex items-center  justify-center h-full">
+
+                            <button aria-label="slide backward"
+                                class=" bg-gray-200 p-3 opacity-50 border rounded-full absolute z-30 left-0 ml-10 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer"
+                                id="prev">
+                                <svg class="text-gray-900" width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 1L1 7L7 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                            <div id="cardRecipie" class="h-full mx-auto overflow-x-hidden overflow-y-hidden">
+                                <div id="slider"
+                                    class="h-full flex lg:gap-8 md:gap-6 gap-14 transition ease-out duration-700">
+                                    <div class="flex flex-shrink-0 relative w-full sm:w-auto">
+
+                                        <div class="bg-white rounded w-80 mx-auto rounded-2xl shadow-lg">
+                                            <div class="bg-gray-200 h-56 p-3 overflow-hidden animate-pulse">
+                                                <img src="assets/images/dry-food-1-1574307.jpg" alt="">
+                                            </div>
+                                            <div class=" p-3">
+                                                <div class="grid grid-cols-1 gap-4 mt-2">
+                                                    <div class="h-8 bg-gray-200 rounded animate-pulse justify-self-center">
+                                                        <h3>Name of Recipie</h3>
+                                                    </div>
+                                                    <div class="h-24 bg-gray-200 rounded animate-pulse">
+                                                        <h6>discription of recipie</h3>
+                                                    </div>
+                                                </div>
+                                                <div class="pt-2 flex justify-around">
+                                                    <div>
+                                                        <img src="assets/images/spoonacular-score-25.svg" class="badge h-12"
+                                                            alt="spoonacular Score:22%" title="spoonacular Score:22%">
+                                                        <p class="center">Score:</p>
+                                                    </div>
+                                                    <div>
+                                                        <img src="assets/images/fast.svg" class="badge h-12"
+                                                            alt="spoonacular Score:22%" title="spoonacular Score:22%">
+                                                        <p class="inline center">Time:</p>
+                                                    </div>
+
+
+                                                </div>
+
+                                                <div class="mt-10 flex justify-around items-center">
+
+                                                    <input class="pl-2 border h-10" type="text"
+                                                        placeholder="Enter your Email">
+
+                                                    <img class="h-10" src="assets/images/icons8-send-64.png"
+                                                        alt="send icon">
+
+
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <button aria-label="slide forward"
+                                class="bg-gray-200 p-3 opacity-50 border rounded-full absolute z-30 right-0 mr-10 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400"
+                                id="next">
+                                <svg class="dark:text-gray-900" width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 1L7 7L1 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </button>
+
+                        </div>
 
 
             </div>
@@ -432,9 +562,11 @@ Alternatively if you want to just have a single hero
 
 
 
-
-
         </div>
+        
+
+
+
 
     </section>
 
