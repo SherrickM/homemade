@@ -60,18 +60,27 @@ function renderIngredientsList(){
         var index = key;
         var userInput = value;
         var listHtml = 
-        $(`<li id="listbox-item-`+index+`" role="option" class="text-gray-900 cursor-default hover:bg-indigo-500 hover:text-white select-none relative py-2 pl-3 pr-9">
-            <div class="flex items-center">
-                <span class="ml-3 block font-normal truncate">
-                    `+userInput+`
+        $(`<li id="listbox-item-`+index+`" role="option"
+        class="text-gray-900 h-20 cursor-default hover:text-gray-500 select-none relative py-2 pl-3 pr-9">
+        <div class="grid grid-cols-12 h-16">
+            <div class="flex items-center col-span-10 h-auto">
+                <span class="ml-3 block truncate text-lg font-bold font-gray-800">
+                `+userInput+`
                 </span>
             </div>
-            <span class="absolute inset-y-0 right-0 flex items-center pr-4">
-            <button type="button" class="h-6 w-6 px-2 bg-pink-600 hover:bg-pink-700 focus:ring-pink-500 focus:ring-offset-pink-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-full">
-                Delete
-              </button>
+            <span class="col-end-13 col-span-1 h-16 w-16 flex justify-center my-auto pr-4">
+                <svg class=" cursor-pointer stroke-2 h-30 w-30  text-red-500 hover:text-red-700"
+                    fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z">
+                    </path>
+                </svg>
             </span>
-        </li>`);
+        </div>
+    </li>`);
+
+        
         console.log(value, key)
         
 
