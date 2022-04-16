@@ -14,6 +14,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/style.css">
+    <script src="https://kit.fontawesome.com/fd54352861.js" crossorigin="anonymous"></script>
 </head>
 
 <body class="bg-white text-gray-600 work-sans leading-normal text-base tracking-normal">
@@ -35,28 +36,29 @@
                 <nav>
                     <ul class="md:flex items-center justify-between text-base text-gray-700 pt-4 md:pt-0">
                         <li><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4"
-                                href="#">Shop</a></li>
+                                href="#">Recipies</a></li>
                         <li><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4"
                                 href="#">About</a></li>
                     </ul>
                 </nav>
+                
             </div>
 
             <div class="order-1 md:order-2">
                 <a class="flex items-center tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl "
                     href="#">
-                    <img class="max-h-32" src="assets/images/f2ccad0549f144f79c399ded188d6f81.png" alt="">
+                    <img class="max-h-32" src="assets/images/homemade_logo.png" alt="">
                 </a>
             </div>
 
-            <div class="order-2 md:order-3 flex items-center" id="nav-content">
+            <div class=" order-2 md:order-3 flex items-center" id="nav-content">
 
                 <nav>
-                    <ul class="md:flex items-center justify-between text-base text-gray-700 pt-4 md:pt-0">
+                    <ul class=" md:flex items-center justify-between text-base text-gray-700 pt-4 md:pt-0">
                         <li><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4"
-                                href="#">Shop</a></li>
+                                href="#">Our Team</a></li>
                         <li><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4"
-                                href="#">About</a></li>
+                                href="#">Contact Us</a></li>
                     </ul>
                 </nav>
 
@@ -179,12 +181,11 @@ Alternatively if you want to just have a single hero
     </section>
 
     <section id="belowHero" class="container h-auto mx-auto bg-white py-8 border-t border-gray-400 ">
-        <div class="container flex px-3 py-8 ">
-            <div id="ingredientsAndCar" class=" sm:w-full mx-auto flex flex-wrap grid sm:grid-cols-2">
+        <div class="container flex px-3 py-8 gap-y-5 w-full mx-auto flex flex-wrap grid-rows-2 sm:grid sm:grid-cols-2 ">
+            
 
 
-
-                <div id="searchbuttonandlistSave" class=" mr-2 grid-rows-4 border border-gray-600">
+                <div id="searchbuttonandlistSave" class=" sm:mr-2 grid-rows-4 border border-gray-600">
 
                     <div id="togglebtn" class=" flex justify-around p-4">
 
@@ -277,7 +278,7 @@ Alternatively if you want to just have a single hero
                 </div>
 
 
-                <div id="recipiecarrasoul" class="flex justify-center ml-2 border border-gray-600">
+                <div id="recipiecarrasoul" class="w-screen sm:w-full flex justify-center sm:ml-2 border border-gray-600">
 
                     <div class="flex items-center justify-center w-full h-full ">
 
@@ -286,18 +287,18 @@ Alternatively if you want to just have a single hero
 
 
 
-                        <div class="w-full relative flex  justify-center h-full">
+                        <div class="w-full relative flex items-center  justify-center h-full">
                                     
                                             <button aria-label="slide backward"
-                                                class="absolute z-30 left-0 ml-10 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer"
+                                                class=" bg-gray-200 p-3 opacity-50 border rounded-full absolute z-30 left-0 ml-10 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer"
                                                 id="prev">
-                                                <svg class="dark:text-gray-900" width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                <svg class="text-gray-900" width="8" height="14" viewBox="0 0 8 14" fill="none"
                                                     xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M7 1L1 7L7 13" stroke="currentColor" stroke-width="2"
                                                         stroke-linecap="round" stroke-linejoin="round" />
                                                 </svg>
                                             </button>
-                                            <div id = "cardRecipie" class=" mx-auto overflow-x-hidden overflow-y-hidden">
+                                            <div id = "cardRecipie" class="h-full mx-auto overflow-x-hidden overflow-y-hidden">
                                                 <div id="slider"
                                                     class="h-full flex lg:gap-8 md:gap-6 gap-14 transition ease-out duration-700">
                                                     <div class="flex flex-shrink-0 relative w-full sm:w-auto">
@@ -331,8 +332,10 @@ Alternatively if you want to just have a single hero
 
                                                                 <div class="mt-10 flex justify-around items-center">
 
-                                                                    <input class="border h-10" type="text" placeholder="Enter your Email">
-                                                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.933 12.8a1 1 0 000-1.6L6.6 7.2A1 1 0 005 8v8a1 1 0 001.6.8l5.333-4zM19.933 12.8a1 1 0 000-1.6l-5.333-4A1 1 0 0013 8v8a1 1 0 001.6.8l5.333-4z"></path></svg>
+                                                                    <input class="pl-2 border h-10" type="text" placeholder="Enter your Email">
+                                                                    
+                                                                    <img class="h-10" src="assets/images/icons8-send-64.png" alt="send icon">
+                                                                    
 
                                                                 </div>
 
@@ -401,7 +404,7 @@ Alternatively if you want to just have a single hero
                                                 </div>
                                             </div>
                                             <button aria-label="slide forward"
-                                                class="absolute z-30 right-0 mr-10 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400"
+                                                class="bg-gray-200 p-3 opacity-50 border rounded-full absolute z-30 right-0 mr-10 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400"
                                                 id="next">
                                                 <svg class="dark:text-gray-900" width="8" height="14" viewBox="0 0 8 14" fill="none"
                                                     xmlns="http://www.w3.org/2000/svg">
@@ -428,7 +431,7 @@ Alternatively if you want to just have a single hero
 
 
             </div>
-        </div>
+        
     </section>
 
 
