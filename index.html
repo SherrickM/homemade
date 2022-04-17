@@ -188,10 +188,10 @@ Alternatively if you want to just have a single hero
 
             <div id="searchbuttonandlistSave" class=" sm:mr-2 grid-rows-4 border border-gray-600">
 
-                <div id="togglebtn" class=" flex justify-around p-4">
+                <div id="" class=" flex justify-around p-4">
 
-                    <div class=" text-4xl">
-                        <h1>
+                    <div class="  text-4xl">
+                        <h1 id="food" class="bgMidL rounded-full p-2">
                             FOOD
 
                         </h1>
@@ -201,16 +201,15 @@ Alternatively if you want to just have a single hero
 
                     <div class="flex justify-center items-center ">
                         <!-- Switch Container -->
-                        <div class="w-14 h-7 flex items-center bg-gray-300 rounded-full mx-3 px-1 bg-blue-700"
-                            @click="handleToggleActive">
+                        <div id="toggleBtn" class="w-14 h-7 flex items-center bg-gray-300 rounded-full mx-3 px-1 bg-blue-700">
                             <!-- Switch -->
-                            <div class="bg-white w-5 h-5 rounded-full shadow-md transform translate-x-7"></div>
+                            <div id="toggleCircle" class="bg-white w-5 h-5 rounded-full shadow-md transform "></div>
                         </div>
 
                     </div>
 
-                    <div class="text-4xl">
-                        <h1>
+                    <div class="text-4xl ">
+                        <h1 id="drink" class=" rounded-full p-2">
                             DRINK
                         </h1>
 
@@ -228,7 +227,7 @@ Alternatively if you want to just have a single hero
 
 
                     <button id="addIngredientsButton"
-                        class="inline relative mx-2 flex items-center px-6 py-2  transition ease-in duration-200 uppercase rounded-full hover:bg-gray-800 hover:text-white border-2 border-gray-900 focus:outline-none">
+                        class="inline relative mx-2 flex items-center px-6 py-2  transition ease-in duration-200 uppercase rounded-full hover:bg-gray-800 hover:text-white border-2 border-gray-900 focus:outline-none" data-v="food">
                         Add
                     </button>
                 </div>
@@ -616,7 +615,8 @@ Alternatively if you want to just have a single hero
 
 
     <script src="assets/jquery-3.6.0.js"></script>
-    <script src="assets/script.js"></script>
+    <!-- <script src="assets/script.js"></script> -->
+    <script src="assets/scriptTest.js"></script>
 </body>
 
 </html>
