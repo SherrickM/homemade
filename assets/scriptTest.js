@@ -28,6 +28,11 @@ var drinkIngredents = [];
 
 // variable for stored food ingredients
 var ingredientsList = [];
+// variable for selecting the search button
+var searchBtn = $("#searchBtn")
+console.log(searchBtn)
+
+var ApiKeyGedion =  "d814cc11a8744e6bb7d9a18faa6b7f17";
 
 
 // // intilizises local storage and populates ingredents list var if not empty
@@ -149,6 +154,39 @@ function renderIngredientsList(){
 
 // calls function to render lists from local storage to page
 renderIngredientsList();
+searchBtn.on("click", searchFoodApi);
+
+
+
+function searchFoodApi(){
+
+    var apiingredients = ingredientsList.join(",+")
+
+    fetch(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=${ApiKeyGedion}&ingredients=${apiingredients}&number=5`)
+    .then(function(response){
+    return response.json();
+})
+
+    .then(function (response) {
+	
+    localStorage.setItem("storedSearch", JSON.stringify(response));
+    
+    for (var i = 0; i< response.length; i++){
+        var id = response[i].id;
+        
+    
+    $("#firstimage"+[i]).attr("src", `https://spoonacular.com/recipeImages/${id}-312x231.jpg`);
+    $("#recipieName"+[i]).text(response[i].title);
+    
+    }
+
+});
+};
+
+function appendHistory(){
+    var savedSearch = JSON.parse(localStorage.getItem("storedSearch"));
+    
+    }
 
 
 // adds funtionality to delete button
