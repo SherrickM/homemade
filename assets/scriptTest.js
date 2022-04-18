@@ -173,18 +173,67 @@ function deleteListItem (){
 
 // Adds functionality to carousel 2 that displays search results
 
-let defaultTransform = 0;
-function goNext() {
-    defaultTransform = defaultTransform - 398;
-    var slider = document.getElementById("slider");
-    if (Math.abs(defaultTransform) >= slider.scrollWidth / 1.7) defaultTransform = 0;
-    slider.style.transform = "translateX(" + defaultTransform + "px)";
+
+ var next2 = $("#next2");
+ var prev2 = $("#prev2");
+let defaultTransform2 = 0;
+function goNext2() {
+    defaultTransform2 = defaultTransform2 - 398;
+    var slider = document.getElementById("slider2");
+    if (Math.abs(defaultTransform2) >= slider.scrollWidth / 1.7) defaultTransform2 = 0;
+    slider.style.transform = "translateX(" + defaultTransform2 + "px)";
 }
-next.addEventListener("click", goNext);
-function goPrev() {
-    var slider = document.getElementById("slider");
-    if (Math.abs(defaultTransform) === 0) defaultTransform = 0;
-    else defaultTransform = defaultTransform + 398;
-    slider.style.transform = "translateX(" + defaultTransform + "px)";
+next2.on("click", goNext2);
+function goPrev2() {
+    var slider = document.getElementById("slider2");
+    if (Math.abs(defaultTransform2) === 0) defaultTransform2 = 0;
+    else defaultTransform2 = defaultTransform2 + 398;
+    slider.style.transform = "translateX(" + defaultTransform2 + "px)";
 }
-prev.addEventListener("click", goPrev);
+prev2.on("click", goPrev2);
+
+// Adds functionality to carousel 3 that displays saved food results
+
+
+var next3 = $("#next3");
+var prev3 = $("#prev3");
+let defaultTransform3 = 0;
+function goNext3() {
+   defaultTransform3 = defaultTransform3 - 398;
+   var slider = document.getElementById("slider3");
+   if (Math.abs(defaultTransform3) >= slider.scrollWidth / 1.7) defaultTransform3 = 0;
+   slider.style.transform = "translateX(" + defaultTransform3 + "px)";
+}
+next3.on("click", goNext3);
+function goPrev3() {
+   var slider = document.getElementById("slider3");
+   if (Math.abs(defaultTransform3) === 0) defaultTransform3 = 0;
+   else defaultTransform3 = defaultTransform3 + 398;
+   slider.style.transform = "translateX(" + defaultTransform3 + "px)";
+}
+prev3.on("click", goPrev3);
+
+// Adds functionality to carousel 4 that displays saved food results
+
+
+var next4 = $("#next4");
+var prev4 = $("#prev4");
+let defaultTransform4 = 0;
+function goNext4() {
+   defaultTransform4 = defaultTransform4 - 398;
+   var slider = document.getElementById("slider4");
+   if (Math.abs(defaultTransform4) >= slider.scrollWidth / 1.7) defaultTransform4 = 0;
+   slider.style.transform = "translateX(" + defaultTransform4 + "px)";
+}
+next4.on("click", goNext4);
+function goPrev4() {
+   var slider = document.getElementById("slider4");
+   if (Math.abs(defaultTransform4) === 0) defaultTransform4 = 0;
+   else defaultTransform4 = defaultTransform4 + 398;
+   slider.style.transform = "translateX(" + defaultTransform4 + "px)";
+}
+prev4.on("click", goPrev4);
+
+
+
+    
