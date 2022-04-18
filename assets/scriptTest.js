@@ -28,6 +28,13 @@ var drinkIngredents = [];
 
 // variable for stored food ingredients
 var ingredientsList = [];
+// variable for selecting the search button
+var searchBtn = $("#searchBtn")
+console.log(searchBtn)
+
+var ApiKeyGedion =  "d814cc11a8744e6bb7d9a18faa6b7f17";
+
+
 
 
 // // intilizises local storage and populates ingredents list var if not empty
@@ -56,9 +63,13 @@ function init() {
     // adds food ingredients list to stored drink ingredients in local storage(storedDrinkIngredients)
     localStorage.setItem("storedDrinkIngredients", JSON.stringify(drinkIngredents));
 
+    appendHistory();
+
 };
 // calls init function to initilize local storage
 init();
+
+
 
 // stores ingredients to local stroage
 function storeIngredients(){
@@ -98,6 +109,7 @@ $("#addIngredientsButton").click(function(){
         };
 
     }
+    
     // clears the user input after being added
     $("#userInputIngredientText").val("");
 
@@ -150,6 +162,65 @@ function renderIngredientsList(){
 // calls function to render lists from local storage to page
 renderIngredientsList();
 
+searchBtn.on("click", searchFoodApi);
+
+
+
+function searchFoodApi(){
+    //  we have to decide if we are going to use daynamic url or just use three inredients everytime. 
+    // for(var i=0; i < ingredientsList.length; i++){
+                
+    // var dynamicUrl = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?ingredients=${ingredientsList[i]}%2${ingredientsList[i]}%2C${ingredientsList[i]}&number=5&ignorePantry=true&ranking=1`
+    // }
+    // console.log(dynamicUrl)
+    // const settings = {
+	// "async": true,
+	// "crossDomain": true,
+	// "url": `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?ingredients=${ingredientsList[0]}%2${ingredientsList[1]}%2C${ingredientsList[2]}%2C${ingredientsList[3]}%2C${ingredientsList[4]}&number=5&ignorePantry=true&ranking=1`,
+	// "method": "GET",
+	// "headers": {
+	// 	"X-RapidAPI-Host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+	// 	"X-RapidAPI-Key": "c4da594f4amsh53139c876b46e00p155ca6jsn0a6b630dd26b"
+        
+	// }
+    fetch(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=${ApiKeyGedion}&ingredients=${ingredientsList[0]},+${ingredientsList[1]},+${ingredientsList[2]}&number=5`)
+    .then(function(response){
+    return response.json();
+})
+
+    .then(function (response) {
+	
+    localStorage.setItem("storedSearch", JSON.stringify(response));
+    
+    for (var i = 0; i< response.length; i++){
+        var id = response[i].id;
+        
+    
+    $("#firstimage"+[i]).attr("src", `https://spoonacular.com/recipeImages/${id}-312x231.jpg`);
+    $("#recipieName"+[i]).text(response[i].title);
+    
+    }
+
+});
+};
+
+function appendHistory(){
+    var savedSearch = JSON.parse(localStorage.getItem("storedSearch"));
+    console.log("hello")
+    for (var i = 0; i< savedSearch.length; i++){
+        var idlocal = savedSearch[i].id;
+       
+    
+    $("#history"+[i]).attr("src", `https://spoonacular.com/recipeImages/${idlocal}-312x231.jpg`);
+    $("#historyname"+[i]).text(savedSearch[i].title);
+    
+    }
+
+
+
+
+ 
+
 
 // adds funtionality to delete button
 // on click of delete button, run function deleteListItem
@@ -187,4 +258,4 @@ function goPrev() {
     else defaultTransform = defaultTransform + 398;
     slider.style.transform = "translateX(" + defaultTransform + "px)";
 }
-prev.addEventListener("click", goPrev);
+prev.addEventListener("click", goPrev)};

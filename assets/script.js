@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+// api for spoonacular that grabs recipies based off ingredients list
+=======
 // // api for spoonacular that grabs recipies based off ingredients list
+>>>>>>> 0da17b77250e7c7dbeeb1b20cb8d4b246e6eb86a
 // const settings = {
 // 	"async": true,
 // 	"crossDomain": true,
@@ -6,13 +10,31 @@
 // 	"method": "GET",
 // 	"headers": {
 // 		"X-RapidAPI-Host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+<<<<<<< HEAD
+// 		"X-RapidAPI-Key": "d814cc11a8744e6bb7d9a18faa6b7f17"
+=======
 // 		"X-RapidAPI-Key": "c4da594f4amsh53139c876b46e00p155ca6jsn0a6b630dd26b"
+>>>>>>> 0da17b77250e7c7dbeeb1b20cb8d4b246e6eb86a
 // 	}
 // };
 
 // $.ajax(settings).done(function (response) {
 // 	console.log(response);
 // });
+<<<<<<< HEAD
+// fetch("https://api.spoonacular.com/recipes/complexSearch?query=pasta&maxFat=25&number=2&apiKey=d814cc11a8744e6bb7d9a18faa6b7f17")
+fetch('https://api.spoonacular.com/recipes/716429/information?apiKey=cb1c464d94f142c08b156c5beddade8b&includeNutrition=false')
+.then(function (response) {
+    return response.json();
+}) .then(function (data) {
+console.log(data)
+})
+// creates array to hold user inputs of ingredients
+var ingredientsList = [];
+// intilizises local storage and populates ingredents list var if not empty
+function init() {
+    var storedIngredientsList = JSON.parse(localStorage.getItem("storedIngredients"));
+=======
 
 // fetch('https://upenn-cors-anywhere.herokuapp.com/https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood')
 // .then(function (response) {
@@ -25,6 +47,7 @@
 // // intilizises local storage and populates ingredents list var if not empty
 // function init() {
 //     var storedIngredientsList = JSON.parse(localStorage.getItem("storedIngredients"));
+>>>>>>> 0da17b77250e7c7dbeeb1b20cb8d4b246e6eb86a
     
 //     if (storedIngredientsList !== null) {
 //         ingredientsList = storedIngredientsList;
