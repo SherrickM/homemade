@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,21 +8,20 @@
     <meta name="description" content="Free open source Tailwind CSS Store template">
     <meta name="keywords"
         content="tailwind,tailwindcss,tailwind css,css,starter template,free template,store template, shop layout, minimal, monochrome, minimalistic, theme, nordic">
-
     <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" />
-
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/style.css">
     <script src="https://kit.fontawesome.com/fd54352861.js" crossorigin="anonymous"></script>
 </head>
-
-
+<style>
+    #drinkRecipeSearchResults{
+        display:none;
+    }
+    </style>
 <body class="bg-white text-gray-600 work-sans leading-normal text-base tracking-normal">
-
     <!--Nav-->
     <nav id="header" class="w-full z-30 top-0 py-1">
         <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-6 py-3">
-
             <label for="menu-toggle" class="cursor-pointer md:hidden block">
                 <svg class="fill-current text-gray-900" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                     viewBox="0 0 20 20">
@@ -32,7 +30,6 @@
                 </svg>
             </label>
             <input name="some_chekbox_name" class="hidden" type="checkbox" id="menu-toggle" />
-
             <div class="hidden md:flex md:items-center md:w-auto w-full order-3 md:order-1" id="menu">
                 <nav>
                     <ul class="md:flex items-center justify-between text-base text-gray-700 pt-4 md:pt-0">
@@ -42,18 +39,14 @@
                                 href="#">About</a></li>
                     </ul>
                 </nav>
-
             </div>
-
             <div class="order-1 md:order-2">
                 <a class="flex items-center tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl "
                     href="#">
                     <img class="max-h-32" src="assets/images/homemade_logo.png" alt="">
                 </a>
             </div>
-
             <div class=" order-2 md:order-3 flex items-center" id="nav-content">
-
                 <nav>
                     <ul class=" md:flex items-center justify-between text-base text-gray-700 pt-4 md:pt-0">
                         <li><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4" href="#">Our
@@ -66,7 +59,6 @@
             </div>
         </div>
     </nav>
-
     <div class="carousel relative container mx-auto" style="max-width:1600px;">
         <div class="carousel-inner relative overflow-hidden w-full">
             <!--Slide 1-->
@@ -75,7 +67,6 @@
             <div class="carousel-item absolute opacity-0" style="height:50vh;">
                 <div class="block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right"
                     style="background-image: url('assets/images/dry-food-1-1574307.jpg');">
-
                     <div class="container mx-auto">
                         <div
                             class="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide">
@@ -85,20 +76,17 @@
                                 href="#">Start Now</a>
                         </div>
                     </div>
-
                 </div>
             </div>
             <label for="carousel-3"
                 class="prev control-1 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
             <label for="carousel-2"
                 class="next control-1 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
-
             <!--Slide 2-->
             <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
             <div class="carousel-item absolute opacity-0 bg-cover bg-right" style="height:50vh;">
                 <div class="block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right"
                     style="background-image: url('assets/images/mediterranean-food-1311330.jpg');">
-
                     <div class="container mx-auto">
                         <div
                             class="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide">
@@ -108,20 +96,17 @@
                                 href="#">Start Now</a>
                         </div>
                     </div>
-
                 </div>
             </div>
             <label for="carousel-1"
                 class="prev control-2 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
             <label for="carousel-3"
                 class="next control-2 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
-
             <!--Slide 3-->
             <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="">
             <div class="carousel-item absolute opacity-0" style="height:50vh;">
                 <div class="block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-bottom"
                     style="background-image: url('assets/images/mexican-food-1534948.jpg">
-
                     <div class="container mx-auto">
                         <div
                             class="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide">
@@ -131,14 +116,12 @@
                                 href="#">Start Now</a>
                         </div>
                     </div>
-
                 </div>
             </div>
             <label for="carousel-2"
                 class="prev control-3 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
             <label for="carousel-1"
                 class="next control-3 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
-
             <!-- Add additional indicators for each slide-->
             <ol class="carousel-indicators">
                 <li class="inline-block mr-3">
@@ -157,89 +140,53 @@
 
         </div>
     </div>
-
-    <!--	 
-
-Alternatively if you want to just have a single hero
-
+    <!-- Alternatively if you want to just have a single hero
 <section class="w-full mx-auto bg-nordic-gray-light flex pt-12 md:pt-0 md:items-center bg-cover bg-right" style="max-width:1600px; height: 32rem; background-image: url('https://images.unsplash.com/photo-1422190441165-ec2956dc9ecc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1600&q=80');">
-
 	<div class="container mx-auto">
-
 		<div class="flex flex-col w-full lg:w-1/2 justify-center items-start  px-6 tracking-wide">
 			<h1 class="text-black text-2xl my-4">Stripy Zig Zag Jigsaw Pillow and Duvet Set</h1>
 			<a class="text-xl inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-black hover:border-black" href="#">products</a>
-
 		</div>
-
 	  </div>
-
-</section>
-
--->
+</section> -->
     <section class="mx-auto container flex justify-center mt-12">
         <h1 class="mx-auto text-4xl sm:text-7xl">Find A Recipie</h1>
     </section>
-
     <section id="belowHero" class="container max-h-fit mx-auto bg-white py-8 border-t border-gray-400 ">
         <div class="container h-fit flex px-3 py-8 gap-y-5 w-full mx-auto flex flex-wrap grid-rows-2 sm:grid-rows-1 sm:grid sm:grid-cols-2 ">
-
-
-
             <div id="searchbuttonandlistSave" class=" sm:mr-2 grid-rows-4 border border-gray-600">
-
                 <div id="" class=" flex justify-around p-4">
-
                     <div class="  text-4xl">
                         <h1 id="food" class="bgMidL rounded-full p-2">
                             FOOD
-
                         </h1>
-
-
                     </div>
-
                     <div class="flex justify-center items-center ">
                         <!-- Switch Container -->
                         <div id="toggleBtn" class="w-14 h-7 flex items-center bg-gray-300 rounded-full mx-3 px-1 bg-blue-700">
                             <!-- Switch -->
                             <div id="toggleCircle" class="bg-white w-5 h-5 rounded-full shadow-md transform "></div>
                         </div>
-
                     </div>
-
                     <div class="text-4xl ">
                         <h1 id="drink" class=" rounded-full p-2">
                             DRINK
                         </h1>
-
-
                     </div>
-
-
                 </div>
-
                 <div id="searchbuttonandlist" class=" flex justify-center p-4  ">
-
                     <input type="text" id="userInputIngredientText"
                         class=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                         placeholder="Type your ingredients here..." />
-
-
                     <button id="addIngredientsButton"
                         class="inline relative mx-2 flex items-center px-6 py-2  transition ease-in duration-200 uppercase rounded-full hover:bg-gray-800 hover:text-white border-2 border-gray-900 focus:outline-none" data-v="food">
                         Add
                     </button>
                 </div>
-
-
                 <div id="ingredientslistgen" class=" p-4 ">
-
                     <div id="ulContainer" class=" w-full h-96 max-h-96 border rounded-md bg-white shadow-sm">
                         <ul id="ingredientsListSaved" tabindex="-1" role="listbox" aria-labelledby="listbox-label"
                             aria-activedescendant="listbox-item-3" class=" py-1">
-
-
                             <li id="listbox-item-0" role="option"
                                 class="text-gray-900 h-20 cursor-default hover:text-gray-500 select-none relative py-2 pl-3 pr-9">
                                 <div class="grid grid-cols-12 h-16">
@@ -259,38 +206,20 @@ Alternatively if you want to just have a single hero
                                     </span>
                                 </div>
                             </li>
-
-
                         </ul>
                     </div>
-
                 </div>
-
                 <div id="searchbuttonandlist" class=" flex justify-center my-4">
-
                     <button id="searchBtn" type="button"
                         class="max-w-xs py-4 px-6  bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 focus:ring-offset-blue-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-full">
                         Search
                     </button>
-
                 </div>
-
             </div>
-
-
             <div id="recipiecarrasoul" class="w-screen sm:w-full flex justify-center sm:ml-2 border border-gray-600">
-
                 <div class="flex items-center justify-center w-full h-full ">
-
-
-
-
-
-
-                    <div class="w-full relative flex items-center  justify-center h-full">
-
+                    <div id="foodRecipeSearchResults" class="w-full relative flex items-center  justify-center h-full">
                         <div class="w-full relative flex items-center  justify-center h-full">
-
                             <button aria-label="slide backward"
                                 class=" bg-gray-200 p-3 opacity-50 border rounded-full absolute z-30 left-0 ml-10 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer"
                                 id="prev">
@@ -361,44 +290,75 @@ Alternatively if you want to just have a single hero
                                         stroke-linejoin="round" />
                                 </svg>
                             </button>
-
                         </div>
+                    </div>
+                    <div id="drinkRecipeSearchResults" class="w-full relative flex items-center  justify-center h-full">
+                        <div class="w-full relative flex items-center  justify-center h-full">
+                            <button aria-label="slide backward"
+                                class=" bg-gray-200 p-3 opacity-50 border rounded-full absolute z-30 left-0 ml-10 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer"
+                                id="prev">
+                                <svg class="text-gray-900" width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 1L1 7L7 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                            <div id="drinkRecipe" class="h-full mx-auto overflow-x-hidden overflow-y-hidden">
+                                <div id="slider"
+                                    class="h-full flex lg:gap-8 md:gap-6 gap-14 transition ease-out duration-700">
+                                    <div class="flex flex-shrink-0 relative w-full sm:w-auto">
 
-
+                                        <div class="bg-white rounded w-80 mx-auto rounded-2xl shadow-lg">
+                                            <div class="bg-gray-200 h-56 p-3 overflow-hidden animate-pulse">
+                                                <img src="assets/images/dry-food-1-1574307.jpg" alt="">
+                                            </div>
+                                            <div class=" p-3">
+                                                <div class="grid grid-cols-1 gap-4 mt-2">
+                                                    <div class="h-8 bg-gray-200 rounded animate-pulse justify-self-center">
+                                                        <h3>Name of Drink</h3>
+                                                    </div>
+                                                    <div class="h-24 bg-gray-200 rounded animate-pulse">
+                                                        <h6>discription of Drink</h3>
+                                                    </div>
+                                                </div>
+                                                <div class="pt-2 flex justify-around">
+                                                </div>
+                                                <div class="mt-10 flex justify-around items-center">
+                                                    <input class="pl-2 border h-10" type="text"
+                                                        placeholder="Enter your Email">
+                                                    <img class="h-10" src="assets/images/icons8-send-64.png"
+                                                        alt="send icon">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button aria-label="slide forward"
+                                class="bg-gray-200 p-3 opacity-50 border rounded-full absolute z-30 right-0 mr-10 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400"
+                                id="next">
+                                <svg class="dark:text-gray-900" width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 1L7 7L1 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
-
-
-
-
             </div>
-
-
-
         </div>
-
     </section>
-
-
     <section class="mx-auto container flex justify-center mt-12">
         <h1 class="mx-auto text-4xl sm:text-7xl">Saved Recipes</h1>
     </section>
-    
-
     <section id="savedRecipes" class="mx-auto container flex justify-center mt-12">
-
-        
-        
         <div id="" class="container h-fit flex px-3 py-8 gap-y-5 w-full mx-auto flex flex-wrap grid-rows-2 sm:grid-rows-1 sm:grid sm:grid-cols-2 ">
-          
-
             <div id="" class=" sm:mr-2 grid-rows-2 border border-gray-600">
                 <h1 class="mx-auto mb-2 text-4xl sm:text-5xl text-center">
                     Food Recipes
                 </h1>
-
                 <div class="w-full relative flex items-center  justify-center h-full">
-
                             <button aria-label="slide backward"
                                 class=" bg-gray-200 p-3 opacity-50 border rounded-full absolute z-30 left-0 ml-10 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer"
                                 id="prev">
@@ -412,7 +372,6 @@ Alternatively if you want to just have a single hero
                                 <div id="slider"
                                     class="h-full flex lg:gap-8 md:gap-6 gap-14 transition ease-out duration-700">
                                     <div class="flex flex-shrink-0 relative w-full sm:w-auto">
-
                                         <div class="bg-white rounded w-80 mx-auto rounded-2xl shadow-lg">
                                             <div class="bg-gray-200 h-56 p-3 overflow-hidden animate-pulse">
                                                 <img src="assets/images/dry-food-1-1574307.jpg" alt="">
@@ -437,27 +396,46 @@ Alternatively if you want to just have a single hero
                                                             alt="spoonacular Score:22%" title="spoonacular Score:22%">
                                                         <p class="inline center">Time:</p>
                                                     </div>
-
-
                                                 </div>
-
                                                 <div class="mt-10 flex justify-around items-center">
+                                                    <input class="pl-2 border h-10" type="text"
+                                                        placeholder="Enter your Email">
+                                                    <img class="h-10" src="assets/images/icons8-send-64.png"
+                                                        alt="send icon">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="drinkRecipe" class="h-full mx-auto overflow-x-hidden overflow-y-hidden">
+                                <div id="slider"
+                                    class="h-full flex lg:gap-8 md:gap-6 gap-14 transition ease-out duration-700">
+                                    <div class="flex flex-shrink-0 relative w-full sm:w-auto">
 
+                                        <div class="bg-white rounded w-80 mx-auto rounded-2xl shadow-lg">
+                                            <div class="bg-gray-200 h-56 p-3 overflow-hidden animate-pulse">
+                                                <img src="assets/images/sample-cocktail.jpg" alt="">
+                                            </div>
+                                            <div class=" p-3">
+                                                <div class="grid grid-cols-1 gap-4 mt-2">
+                                                    <div class="h-8 bg-gray-200 rounded animate-pulse justify-self-center">
+                                                        <h3>Name of Recipie</h3>
+                                                    </div>
+                                                    <div class="h-24 bg-gray-200 rounded animate-pulse">
+                                                        <h6>discription of recipie</h3>
+                                                    </div>
+                                                </div>
+                                                <div class="mt-10 flex justify-around items-center">
                                                     <input class="pl-2 border h-10" type="text"
                                                         placeholder="Enter your Email">
 
                                                     <img class="h-10" src="assets/images/icons8-send-64.png"
                                                         alt="send icon">
-
-
                                                 </div>
-
-
                                             </div>
                                         </div>
-
                                     </div>
-                                    
                                 </div>
                             </div>
                             <button aria-label="slide forward"
@@ -469,26 +447,18 @@ Alternatively if you want to just have a single hero
                                         stroke-linejoin="round" />
                                 </svg>
                             </button>
-
                 </div>
-
             </div>
-
-
-          
-
             <div id="" class=" grid-rows-2 border border-gray-600">
                 <h1 class="mx-auto mb-2 text-4xl sm:text-5xl text-center">Drink Recipes</h1>
-
                         <div class="w-full relative flex items-center  justify-center h-full">
-
                             <button aria-label="slide backward"
                                 class=" bg-gray-200 p-3 opacity-50 border rounded-full absolute z-30 left-0 ml-10 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer"
                                 id="prev">
                                 <svg class="text-gray-900" width="8" height="14" viewBox="0 0 8 14" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path d="M7 1L1 7L7 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" />
+                                        stroke-linejoin="round"/>
                                 </svg>
                             </button>
                             <div id="cardRecipie" class="h-full mx-auto overflow-x-hidden overflow-y-hidden">
@@ -520,29 +490,19 @@ Alternatively if you want to just have a single hero
                                                             alt="spoonacular Score:22%" title="spoonacular Score:22%">
                                                         <p class="inline center">Time:</p>
                                                     </div>
-
-
                                                 </div>
-
                                                 <div class="mt-10 flex justify-around items-center">
-
                                                     <input class="pl-2 border h-10" type="text"
                                                         placeholder="Enter your Email">
-
                                                     <img class="h-10" src="assets/images/icons8-send-64.png"
                                                         alt="send icon">
-
-
                                                 </div>
-
-
                                             </div>
                                         </div>
-
                                     </div>
-                                    
                                 </div>
                             </div>
+                            
                             <button aria-label="slide forward"
                                 class="bg-gray-200 p-3 opacity-50 border rounded-full absolute z-30 right-0 mr-10 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400"
                                 id="next">
@@ -554,32 +514,9 @@ Alternatively if you want to just have a single hero
                             </button>
 
                         </div>
-
-
             </div>
-
-
-
-
         </div>
-        
-
-
-
-
     </section>
-
-
-
-
-
-
-
-
-
-
-
-
     <footer class="container mx-auto bg-white my-48 py-8 border-t border-gray-400">
         <div class="container flex px-3 py-8 ">
             <div class="w-full mx-auto flex flex-wrap">
@@ -606,13 +543,6 @@ Alternatively if you want to just have a single hero
             </div>
         </div>
     </footer>
-
-
-
-
-
-
-
 
     <script src="assets/jquery-3.6.0.js"></script>
     <!-- <script src="assets/script.js"></script> -->
