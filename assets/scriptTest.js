@@ -7,21 +7,43 @@ function toggleFoodDrink(event){
     // toggle background of food class
     $("#food").toggleClass("bgMidL");
     $("#drink").toggleClass("bgMidL");
+
     // if the data-v value is "food", then change it to "drink"
     if($("#addIngredientsButton").data("v") == "food"){
-        $("#addIngredientsButton").data("v", "drink");
-        console.log($("#addIngredientsButton").data("v"));
-    }
-    // if the data-v value is "drink", then change it to "food"
-    else{
-        // $("#drink").toggleClass("bgMidL");
-        $("#addIngredientsButton").data("v", "food");
-        console.log($("#addIngredientsButton").data("v"))
+
+        renderDrinkIngredientsSelector();     
+
+    } else { // if the data-v value is "drink", then change it to "food"
+
+        renderFoodIngredientsSelector();
+
     }
     
     renderIngredientsList();
 
 };
+
+function renderDrinkIngredientsSelector(){
+    $("#addIngredientsButton").data("v", "drink");
+
+    //here's where you'll show the drink card/ hide food card
+    $("#foodRecipeSearchResults").hide();
+    $("#drinkRecipeSearchResults").show();
+
+    console.log($("#addIngredientsButton").data("v"));
+}
+
+function renderFoodIngredientsSelector(){
+    $("#addIngredientsButton").data("v", "food");
+
+    //here's where you'll show food card/hide drink card
+    $("#foodRecipeSearchResults").show();
+    $("#drinkRecipeSearchResults").hide();
+
+    console.log($("#addIngredientsButton").data("v"))
+}
+
+
 
 // variable for stored drink ingredintes
 var drinkIngredents = [];
@@ -114,20 +136,20 @@ function renderIngredientsList(){
     // clears rendered list ingredents from page to prevent double rendering
     $("#ingredientsListSaved").empty();
     // creates variable for current list for alternating between food and drink
-    var currentList = null;
+    var currentList = null; 
     // if toogle switch's data-v = food, populate currentList with food ingredients, otherwise
     // populate with drink list
     if($("#addIngredientsButton").data("v") == "food"){
         currentList = ingredientsList;
     } else {
         currentList = drinkIngredents
-        };
+    };
     // for each value in the currentList, render html from list
     currentList.forEach((value, key) => {
         var index = key;
         var userInput = value;
         var listHtml = 
-        $(`<li id="listbox-item-`+index+`" role="option"
+        $(`<li id="listbox-item-${index}" role="option"
         class="text-gray-900 h-16 cursor-default hover:text-gray-500 select-none relative py-2 pl-3 pr-9">
         <div class="grid grid-cols-12 h-16">
             <div class="flex items-center col-span-10 h-auto">
@@ -270,8 +292,4 @@ function goPrev4() {
    else defaultTransform4 = defaultTransform4 + 398;
    slider.style.transform = "translateX(" + defaultTransform4 + "px)";
 }
-prev4.on("click", goPrev4);
-
-
-
-    
+prev.addEventListener("click", goPrev);
