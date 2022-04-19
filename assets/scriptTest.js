@@ -154,34 +154,36 @@ function renderIngredientsList(){
 
 // calls function to render lists from local storage to page
 renderIngredientsList();
-searchBtn.on("click", searchFoodApi);
+// searchBtn.on("click", searchFoodApi);
 
 
 
-function searchFoodApi(){
+// function searchFoodApi(){
 
-    var apiingredients = ingredientsList.join(",+")
+//     var apiingredients = ingredientsList.join(",+")
 
-    fetch(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=${ApiKeyGedion}&ingredients=${apiingredients}&number=5`)
-    .then(function(response){
-    return response.json();
-})
+//     fetch(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=${ApiKeyGedion}&ingredients=${apiingredients}&number=5`)
+//     .then(function(response){
+//     return response.json();
+// })
 
-    .then(function (response) {
+//     .then(function (response) {
 	
-    localStorage.setItem("storedSearch", JSON.stringify(response));
+//     localStorage.setItem("storedSearch", JSON.stringify(response));
     
-    for (var i = 0; i< response.length; i++){
-        var id = response[i].id;
+//     for (var i = 0; i< response.length; i++){
+//         var id = response[i].id;
         
     
-    $("#firstimage"+[i]).attr("src", `https://spoonacular.com/recipeImages/${id}-312x231.jpg`);
-    $("#recipieName"+[i]).text(response[i].title);
+//     $("#firstimage"+[i]).attr("src", `https://spoonacular.com/recipeImages/${id}-312x231.jpg`);
+//     $("#recipieName"+[i]).text(response[i].title);
     
-    }
+//     }
 
-});
-};
+// });
+// };
+
+
 
 function appendHistory(){
     var savedSearch = JSON.parse(localStorage.getItem("storedSearch"));
@@ -297,19 +299,19 @@ prev4.on("click", goPrev4);
 
 // getFoodRecipeByIngredients();
 
-function getRecipieInfo(){
-    id = 673463;
-    const options = {
-        method: 'GET',
-    };
-    fetch(`https://api.spoonacular.com/recipes/${id}/information?apiKey=820e8a82b4dc451a8a662f4ae853fb43&recipeBoxId=673463`, options)
-    .then(function (response) {
-        return response.json();
-      })
-      .then(function (data) {
-        console.log(data);
-      })
-};
+// function getRecipieInfo(){
+//     id = 673463;
+//     const options = {
+//         method: 'GET',
+//     };
+//     fetch(`https://api.spoonacular.com/recipes/${id}/information?apiKey=820e8a82b4dc451a8a662f4ae853fb43&recipeBoxId=673463`, options)
+//     .then(function (response) {
+//         return response.json();
+//       })
+//       .then(function (data) {
+//         console.log(data);
+//       })
+// };
 
-getRecipieInfo()
+// getRecipieInfo()
 

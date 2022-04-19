@@ -119,5 +119,24 @@
 } */
 
 /* .card {
-  width: 700px;
+  width: 320px;
+  height: 700px;
+} */
+
+.missedIngredients { 
+  column-count: 2;
+}
+
+.seeFullRecipeBtn:hover{
+  transform: scale(110%);
+  
+}
+#recipiecarrasoul{
+  background-color: #A2D5AB;
+}
+
+/* @media screen and (min-width: 1400px){
+  .card, .cardContainer {
+    width: 450px;
+  }
 } */
