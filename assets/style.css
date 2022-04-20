@@ -41,7 +41,17 @@
   color: #557B83 ;
 }
 
+.missedIngredients { 
+  column-count: 2;
+}
 
+.seeFullRecipeBtn:hover{
+  transform: scale(110%);
+
+}
+#recipiecarrasoul{
+  background-color: #A2D5AB;
+}
 
 .work-sans {
     font-family: 'Work Sans', sans-serif;
@@ -98,43 +108,45 @@
     color: #000;
     /*Set to match the Tailwind colour you want the active one to be */
 }
-/* @media only screen and (max-width: 640px) {
 
-} */
 
-/* #searchBtn{
-    position: relative;
-    top:-180px;
-}
-#ulContainer{
-    position: relative;
-    top:-70px;
 
-} */
-
-/* .toggle-checkbox:checked {
-    @apply: right-0 border-green-400;
-    right: 0;
-    border-color: blue;
-  }
-  .toggle-checkbox:checked + .toggle-label {
-    @apply: bg-green-400;
-    background-color: white;
-  } */
 
 #ingredientsListSaved {
     height: 400px;
 }
 
-/* carousel css */
-
-.cardRecipie { 
-  position: relative;
-
-}
+/***** carousel css ******/
 
 /* width for saved recipes */
 
 .savedDisplay{
   width: 100%;
 }
+
+/* .cardContainer {
+  width: 700px;
+} */
+
+/* .card {
+  width: 320px;
+  height: 700px;
+} */
+
+.missedIngredients { 
+  column-count: 2;
+}
+
+.seeFullRecipeBtn:hover{
+  transform: scale(110%);
+  
+}
+#recipiecarrasoul{
+  background-color: #A2D5AB;
+}
+
+/* @media screen and (min-width: 1400px){
+  .card, .cardContainer {
+    width: 450px;
+  }
+} */
