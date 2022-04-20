@@ -523,43 +523,43 @@ prev4.on("click", goPrev4);
 
 
 
-// Api functionality*******
-// var recipeIds = [];
-// function getFoodRecipeByIngredients () {
-//     var urlingredintlist = ingredientsList.join(",+");
-//     const options = {
-//         method: 'GET',
-//     };
-//     fetch(`https://api.spoonacular.com/recipes/findByIngredients?ingredients=`+urlingredintlist+`&number=5&apiKey=820e8a82b4dc451a8a662f4ae853fb43`, options)
-//     .then(response => {
-//         return response.json();
-//     })
-//     .then(function (data) {
-//         $.each(data,function(prop,obj)
-//             {
-//             recipeIds.push(obj.id);
-//         });
-//         getRecipieInfo();
-//       })
-//     .catch(err => console.error(err));
-// };
+Api functionality*******
+var recipeIds = [];
+function getFoodRecipeByIngredients () {
+    var urlingredintlist = ingredientsList.join(",+");
+    const options = {
+        method: 'GET',
+    };
+    fetch(`https://api.spoonacular.com/recipes/findByIngredients?ingredients=`+urlingredintlist+`&number=5&apiKey=820e8a82b4dc451a8a662f4ae853fb43`, options)
+    .then(response => {
+        return response.json();
+    })
+    .then(function (data) {
+        $.each(data,function(prop,obj)
+            {
+            recipeIds.push(obj.id);
+        });
+        getRecipieInfo();
+      })
+    .catch(err => console.error(err));
+};
 
-// getFoodRecipeByIngredients();
+getFoodRecipeByIngredients();
 
-// function getRecipieInfo(){
-//     id = 673463;
-//     const options = {
-//         method: 'GET',
-//     };
-//     fetch(`https://api.spoonacular.com/recipes/${id}/information?apiKey=820e8a82b4dc451a8a662f4ae853fb43&recipeBoxId=673463`, options)
-//     .then(function (response) {
-//         return response.json();
-//       })
-//       .then(function (data) {
-//         console.log(data);
-//       })
-// };
+function getRecipieInfo(){
+    id = 673463;
+    const options = {
+        method: 'GET',
+    };
+    fetch(`https://api.spoonacular.com/recipes/${id}/information?apiKey=820e8a82b4dc451a8a662f4ae853fb43&recipeBoxId=673463`, options)
+    .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        console.log(data);
+      })
+};
 
-// getRecipieInfo()
+getRecipieInfo()
 
 
