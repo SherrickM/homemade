@@ -1,7 +1,7 @@
 // creates event listener and code for click on toggle button between food and drink
 $("#toggleBtn").click(toggleFoodDrink);
 // functionality of toggle botton between food and drink
-function toggleFoodDrink(event) {
+function toggleFoodDrink() {
     // togogles the class that moves the inner circle to the left and right"
     $("#toggleCircle").toggleClass("translate-x-7");
     // toggle background of food class
@@ -181,248 +181,130 @@ function renderIngredientsList() {
 // calls function to render lists from local storage to page
 renderIngredientsList();
 
-// searchBtn.on("click", searchApi);
+searchBtn.on("click", searchApi);
 
 
-var searchedID =[];
+var searchedID = [];
 
 
-// function searchApi() {
-    
-    
-//     if ($("#addIngredientsButton").data("v") == "food") {
-//         var sliderEl = $("#slider2");
-//         sliderEl.empty();
-        
-//         var apiingredients = ingredientsList.join(",+")
+function searchApi() {
 
-//         fetch(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=${ApiKeyGedion}&ingredients=${apiingredients}&number=5`)
-//         .then(function(response){
-//         return response.json();
-//     })
+
+    if ($("#addIngredientsButton").data("v") == "food") {
+        var sliderEl = $("#slider2");
+        sliderEl.empty();
+
+        var apiingredients = ingredientsList.join(",+")
+
+        fetch(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=${ApiKeyGedion}&ingredients=${apiingredients}&number=5`)
+            .then(function (response) {
+                return response.json();
+            })
+
+            .then(function (response) {
+
+                localStorage.setItem("storedSearch", JSON.stringify(response));
+
+
+                for (var i = 0; i < response.length; i++) {
+                    var id = response[i].id;
+                    var missedIng = response[i].missedIngredients;
+                    var RecipieTitle = response[i].title
+
+
+
+                    // var listitem =
+                    // (var j = 0; j < missedIng.length; j++){
+                    //     var listitem = $("<li>");
+                    //     listitem.text(missedIng[j].name);
+                    //     list.append(listitem);
+                    //     })
+                    var cardhtml = $(`<div id = "foorSearchResults"+${i} class=" cardContainer px-3 py-3 flex flex-shrink-0 relative sm:mr-12  w-full  sm:w-96">
     
-//         .then(function (response) {
-        
-//         localStorage.setItem("storedSearch", JSON.stringify(response));
-        
-        
-//         for (var i = 0; i< response.length; i++){
-//             var id = response[i].id;
-//             var missedIng = response[i].missedIngredients;
-//             var RecipieTitle = response[i].title
-            
-            
+            <div class="card py-2 bg-white rounded  mx-auto rounded-2xl shadow-md sm:w-96 ">
+                <div class="p-2  drop-shadow-lg">
+                    <img class=" mx-auto rounded drop-shadow-lg" src="https://spoonacular.com/recipeImages/${id}-312x231.jpg" alt="image of recipie">
+                </div>
+                <h1 class="text-4xl text-center px-4">
+                ${(response[i].title)}
+                </h1>
+                <div class="border border-green-800 w-64 mx-auto my-2"></div>
+                <h3 class="text-center text-2xl px-4 ">
+                    Remaining ingredients Needed:
+                </h3>
+                <div class="border border-black rounded w-64 h-32 mx-auto mt-2 drop-shadow-md">
+                    <ul id="" class="missedIngredients ml-5 pl-2 pt-2 w-64 h-32 list-decimal">
+                        <li>fghdfgh</li>
+                    </ul>                               
+                </div>
+                <div id="" class="seeFullRecipeBtn rounded-full mx-auto shadow-2xl flex w-64 justify-center mt-6 border hover:cursor-pointer">
+                    <a class=" " href="">See Full Recipe Here</a>
+                </div>
     
-//             // var listitem =
-//             // (var j = 0; j < missedIng.length; j++){
-//             //     var listitem = $("<li>");
-//             //     listitem.text(missedIng[j].name);
-//             //     list.append(listitem);
-//             //     })
-//             var cardhtml = $(`<div id = "foorSearchResults"+${i} class=" cardContainer px-3 py-3 flex flex-shrink-0 relative sm:mr-12  w-full  sm:w-96">
-    
-//             <div class="card py-2 bg-white rounded  mx-auto rounded-2xl shadow-md sm:w-96 ">
-//                 <div class="p-2  drop-shadow-lg">
-//                     <img class=" mx-auto rounded drop-shadow-lg" src="https://spoonacular.com/recipeImages/${id}-312x231.jpg" alt="image of recipie">
-//                 </div>
-//                 <h1 class="text-4xl text-center px-4">
-//                 ${(response[i].title)}
-//                 </h1>
-//                 <div class="border border-green-800 w-64 mx-auto my-2"></div>
-//                 <h3 class="text-center text-2xl px-4 ">
-//                     Remaining ingredients Needed:
-//                 </h3>
-//                 <div class="border border-black rounded w-64 h-32 mx-auto mt-2 drop-shadow-md">
-//                     <ul id="" class="missedIngredients ml-5 pl-2 pt-2 w-64 h-32 list-decimal">
-//                         <li>ksdjnfsdk</li>
-//                         <li>fgkjndfg</li>
-//                         <li>dgfhgf</li>
-//                         <li>fghdfgh</li>
-//                         <li>fghdfgh</li>
-//                         <li>fghdfgh</li>
-//                         <li>fghdfgh</li>
-//                         <li>fghdfgh</li>
-//                     </ul>                               
-//                 </div>
-//                 <div id="" class="seeFullRecipeBtn rounded-full mx-auto shadow-2xl flex w-64 justify-center mt-6 border hover:cursor-pointer">
-//                     <a class=" " href="">See Full Recipe Here</a>
-//                 </div>
-    
-//                 <div class="mt-8 mb-8 flex justify-around w-80 mx-auto">
+                <div class="mt-8 mb-8 flex justify-around w-80 mx-auto">
                     
-//                         <div>
-//                             <img src="assets/images/spoonacular-score-25.svg" class="badge h-12"
-//                                 alt="spoonacular Score:22%" title="spoonacular Score:22%">
-//                             <p class="center text-">Score: </p>
-//                         </div>
-//                         <div>
-//                             <img src="assets/images/fast.svg" class="badge h-12"
-//                                 alt="spoonacular Score:22%" title="spoonacular Score:22%">
-//                             <p  id = "cookTime"${i} class="inline center">Time:</p>
-//                         </div>
-                    
-//                 </div>
-//             </div>
-                
-                
-    
-//         </div>`);
+                        <div>
+                            <img src="assets/images/spoonacular-score-25.svg" class="badge h-12"
+                                alt="spoonacular Score:22%" title="spoonacular Score:22%">
+                            <p class="center text-">Score: </p>
+                        </div>
+                        <div>
+                            <img src="assets/images/fast.svg" class="badge h-12"
+                                alt="spoonacular Score:22%" title="spoonacular Score:22%">
+                            <p  id = "cookTime"${i} class="inline center">Time:</p>
+                        </div>
+                </div>
+            </div>
+        </div>`);
+                    sliderEl.append(cardhtml);
+                    searchedID.push(id);
+                }
+                fetch(`https://api.spoonacular.com/recipes/informationBulk?apiKey=${ApiKeyGedion}&ids=${searchedID}`)
+                    .then(function (response2) {
+                        return response2.json();
+                    })
+                    .then(function (response2) {
+                        localStorage.setItem("storedBulkSearch", JSON.stringify(response2));
+                    })
 
+            });
+    } else {
+        var apiDrinkIngredients = drinkIngredients[0]
+        fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${apiDrinkIngredients}`)
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (response) {
 
-//             sliderEl.append(cardhtml);
-        
-    
-           
-//             searchedID.push(id);
-    
-//             // var sliderEl = $("#slider2");
-//             // var classConatinerEl = $("<div>");
-//             // classConatinerEl.addClass("cardContainer px-3 py-3 flex flex-shrink-0 relative sm:mr-12  w-full  sm:w-96");
-//             // sliderEl.append(classConatinerEl);
-//             // var cardEl = $("<div>");
-//             // cardEl.addClass("card py-2 bg-white rounded  mx-auto rounded-2xl shadow-md sm:w-96");
-//             // classConatinerEl.append(cardEl);
-//             // var imagecontainer = $("<div>");
-//             // imagecontainer.addClass("p-2  drop-shadow-lg");
-//             // cardEl.append(imagecontainer);
-//             // var recipeimg = $("<img>");
-//             // recipeimg.addClass("mx-auto rounded drop-shadow-lg");
-//             // recipeimg.attr({
-//             //     src : `https://spoonacular.com/recipeImages/${id}-312x231.jpg`,
-//             //     id : "#firstimage"+[i]
-//             // });
-//             // imagecontainer.append(recipeimg);
-//             // var h1El = $("<h1>");
-//             // h1El.addClass("text-4xl text-center px-4");
-//             // h1El.text(response[i].title);
-//             // cardEl.append(h1El);
-//             // var lineEl = $("<div>")
-//             // lineEl.addClass("border border-green-800 w-64 mx-auto my-2");
-//             // cardEl.append(lineEl);
-//             // var h3El = $("<h3>");
-//             // h3El.addClass("text-center text-2xl px-4 ");
-//             // h3El.text("Remaining ingredients Needed: ");
-//             // cardEl.append(h3El);
-//             // var listconatiner = $("<div>");
-//             // listconatiner.addClass("border border-black rounded w-64 h-32 mx-auto mt-2 drop-shadow-md");
-//             // cardEl.append(listconatiner);
-//             // var list = $("<ul>");
-//             // list.addClass("missedIngredients ml-5 pl-2 pt-2 w-64 h-32 list-decimal");
-//             // listconatiner.append(list);
-//             // var listitem = $("<li>")
-//             // for (var j = 0; j < missedIng.length; j++){
-//             //     var listitem = $("<li>");
-//             //     listitem.text(missedIng[j].name);
-//             //     list.append(listitem);
-//             //     }
-//             // list.append(listitem);
-//             // var saveBtnEl = $("<div>");
-//             // saveBtnEl.addClass("seeFullRecipeBtn rounded-full mx-auto shadow-2xl flex w-64 justify-center mt-6 border hover:cursor-pointer")
-//             // cardEl.append(saveBtnEl);
-//             // var savereciepeEL = $("<a>")
-//             // savereciepeEL.text("Save Recipe");
-//             // savereciepeEL.append(saveBtnEl);
-//             // var iconsContainerEL = $("<div>");
-//             // iconsContainerEL.addClass("mt-8 mb-8 flex justify-around w-80 mx-auto");
-//             // cardEl.append(iconsContainerEL);
-//             // var spoonacularEL = $("<div>");
-//             // iconsContainerEL.append(spoonacularEL);
-//             // var spoonacularIcon = $("<img>");
-//             // spoonacularIcon.attr({
-//             //     src : "assets/images/spoonacular-score-25.svg",
-//             //     alt : "spoonacular Score:",
-//             //     title : "spoonacular Score: "
-//             // });
-//             // spoonacularIcon.addClass("badge h-12")
-//             // spoonacularEL.append(spoonacularIcon);
-//             // var scoreTextEl = $("<p>");
-//             // scoreTextEl.addClass("center text-");
-//             // scoreTextEl.text("Score: ");
-//             // scoreTextEl.attr("id", "recipeScore")
-//             // spoonacularEL.append(scoreTextEl);
-//             // var cookTimeEL = $("<div>");
-//             // iconsContainerEL.append(cookTimeEL);
-//             // var cookTimeIcon = $("<img>");
-//             // cookTimeIcon.attr({
-//             //     src : "assets/images/fast.svg",
-//             //     alt : "spoonacular Score:",
-//             //     title : "spoonacular Score: "
-//             // });
-//             // cookTimeIcon.addClass("badge h-12")
-//             // cookTimeEL.append(cookTimeIcon);
-//             // var TimeTextEl = $("<p>");
-//             // TimeTextEl.addClass("center text-");
-//             // TimeTextEl.attr("id", "cookTime"+[i])
-//             // TimeTextEl.text("Time: ");
-//             // cookTimeEL.append(TimeTextEl);
-           
-//         }
-                
-//             fetch(`https://api.spoonacular.com/recipes/informationBulk?apiKey=${ApiKeyGedion}&ids=${searchedID}`)
-//             .then(function(response2){
-//                 return response2.json();
-//             })
-//                 .then(function(response2){
+                localStorage.setItem("storedSearch", JSON.stringify(response));
+                console.log(response);
+                for (var i = 0; i < 5; i++) {
+                    var drinks1 = response.drinks[i];
+                    console.log(drinks1);
+                    // var drinkImage = drinks1.strDrinkThumb;
+                    // var drinkTitle = drinks1.strDrink;
+                    // var drinkId = drinks1.idDrink;
+                    // fetch(`https:// www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drinkId}`)
+                    //     .then(function (response) {
+                    //         return response.json();
+                    //     }
+                    //     )
+                    // for (var i = 0; i < response.length; i++) {
+                    //     var id = response[i].id;
+                    // }
 
-//                     localStorage.setItem("storedBulkSearch", JSON.stringify(response2));
-//                     // $("#cookTime"+[i]).text(`Time :${ response2[i].readyInMinutes} mins.`)
-//                     console.log(response2);
-//                 })
-                
-//             });
-//     } else {
-//         var apiDrinkIngredients =  drinkIngredients[0]
+                }
+            })
 
-//         fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${apiDrinkIngredients}`)
-//             .then(function (response) {
-//                 return response.json();
-//             })
-//             .then(function (response) {
-
-//                 localStorage.setItem("storedSearch", JSON.stringify(response));
-//              //   console.log(response);
-//              for (var i = 0; i< 5; i++){
-//                 var drinks1=response.drinks[i];
-//                 console.log(drinks1);
-//                 // var drinkImage = drinks1.strDrinkThumb;
-//                 // var drinkTitle = drinks1.strDrink;
-//                 // var drinkId = drinks1.idDrink;
-//                 // fetch(`https:// www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drinkId}`)
-//                 // .then(function (response) {
-//                 //     return response.json();
-//                 // }
-//                 // )
-//                 // for (var i = 0; i < response.length; i++) {
-//                 //     var id = response[i].id;
-//              }
-
-//                 //     $("#firstimage" + [i]).attr("src", `https://spoonacular.com/recipeImages/${id}-312x231.jpg`);
-//                 //     $("#recipieName" + [i]).text(response[i].title);
-
-//                 // }
-
-//             });
-//     }
-
-// };
-
-
-function appendHistory() {
-    var savedSearch = JSON.parse(localStorage.getItem("storedSearch"));
-
-    console.log(savedSearch)
-    console.log(savedSearch[0].id);
-    for (var i = 0; i< savedSearch.length; i++){
-        var savedFoodId = savedSearch[i].id
-     $("#historyimage"+[i]).attr("src", `https://spoonacular.com/recipeImages/${savedFoodId}-312x231.jpg`);
-     $("#historyname"+[i]).text(savedSearch[i].title);
-    }
-
-    
     };
+}
+
+// function appendHistory() {
+//     var savedSearch = JSON.parse(localStorage.getItem("storedSearch"));
+//     };
 
 
-appendHistory();
+// appendHistory();
 
 // adds funtionality to delete button
 // on click of delete button, run function deleteListItem
@@ -451,22 +333,19 @@ var next2 = $("#next2");
 var prev2 = $("#prev2");
 let defaultTransform2 = 0;
 function goNext2() {
-    var carouselWidth = $("#slider2") .width();
-    console.log(carouselWidth);
-    
+    // var carouselWidth = $("#slider2").width();
+    // console.log(carouselWidth);
+
 
     var scrollpxs = -480;
 
     defaultTransform2 = defaultTransform2 - 350;
     var slider = document.getElementById("slider2");
-    // if (Math.abs(defaultTransform2) >= slider.scrollWidth / 1.7) defaultTransform2 = 0;
-    // slider.style.transform = "translateX(" + defaultTransform2 + "px)";
+    if (Math.abs(defaultTransform2) >= slider.scrollWidth / 1.7) defaultTransform2 = 0;
+    slider.style.transform = "translateX(" + defaultTransform2 + "px)";
 
-    
-
-
-    slider.scrollBy(-300, 300);
-    console.log(slider.scrollWidth)
+    //slider.scrollBy(-300, 300);
+    //console.log(slider.scrollWidth)
 }
 next2.on("click", goNext2);
 function goPrev2() {
@@ -521,45 +400,5 @@ function goPrev4() {
 prev4.on("click", goPrev4);
 
 
-
-
-// Api functionality*******
-// var recipeIds = [];
-// function getFoodRecipeByIngredients () {
-//     var urlingredintlist = ingredientsList.join(",+");
-//     const options = {
-//         method: 'GET',
-//     };
-//     fetch(`https://api.spoonacular.com/recipes/findByIngredients?ingredients=`+urlingredintlist+`&number=5&apiKey=820e8a82b4dc451a8a662f4ae853fb43`, options)
-//     .then(response => {
-//         return response.json();
-//     })
-//     .then(function (data) {
-//         $.each(data,function(prop,obj)
-//             {
-//             recipeIds.push(obj.id);
-//         });
-//         getRecipieInfo();
-//       })
-//     .catch(err => console.error(err));
-// };
-
-// getFoodRecipeByIngredients();
-
-// function getRecipieInfo(){
-//     id = 673463;
-//     const options = {
-//         method: 'GET',
-//     };
-//     fetch(`https://api.spoonacular.com/recipes/${id}/information?apiKey=820e8a82b4dc451a8a662f4ae853fb43&recipeBoxId=673463`, options)
-//     .then(function (response) {
-//         return response.json();
-//       })
-//       .then(function (data) {
-//         console.log(data);
-//       })
-// };
-
-// getRecipieInfo()
 
 
