@@ -345,14 +345,14 @@ function searchApi() {
              for (var i = 0; i< 5; i++){
                 var drinks1=response.drinks[i];
                 console.log(drinks1);
-                var drinkImage = drinks1.strDrinkThumb;
-                var drinkTitle = drinks1.strDrink;
-                var drinkId = drinks1.idDrink;
-                fetch(`https:// www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drinkId}`)
-                .then(function (response) {
-                    return response.json();
-                }
-                )
+                // var drinkImage = drinks1.strDrinkThumb;
+                // var drinkTitle = drinks1.strDrink;
+                // var drinkId = drinks1.idDrink;
+                // fetch(`https:// www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drinkId}`)
+                // .then(function (response) {
+                //     return response.json();
+                // }
+                // )
                 // for (var i = 0; i < response.length; i++) {
                 //     var id = response[i].id;
              }
