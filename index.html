@@ -219,11 +219,75 @@
             </div>
             <div id="recipiecarrasoul" class="w-screen sm:w-full flex justify-center sm:ml-2 border border-gray-600">
 
+                <div id="" class="savedDisplay sm:px-2  mx-auto pb-20 grid-rows-2 border border-gray-600">
+                    <h1 class="mt-2 mx-auto mb-2 text-4xl sm:text-5xl lg:mt-4 text-center">
+                        Search Results
+                    </h1>
+                    <div class="border-b border-black w-80 mx-auto"></div>
+    
+                    <div class="relative flex items-center  justify-center ">
+    
+                        <button aria-label="slide backward"
+                            class=" bg-gray-400 p-3 opacity-60 border rounded-full absolute z-30 left-0 ml-10 focus:outline-none focus:bg-gray-600 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer"
+                            id="prev3">
+                            <svg class="text-gray-900" width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 1L1 7L7 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <div id="" class="cardRecipie h-full mx-auto overflow-x-hidden overflow-y-hidden">
+                            <div id="slider2" class="h-full flex sm:ml-20 sm:mt-2 lg:ml-12 xl:ml-44 lg:gap-8 md:gap-6 gap-14 transition ease-out duration-700">
+    
+                               
+    
+                                
+    
+                            </div>
+                        </div>
+                        <button aria-label="slide forward"
+                            class="bg-gray-400 p-3 opacity-60 border rounded-full absolute z-30 right-0 mr-10 focus:outline-none focus:bg-gray-600 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400"
+                            id="next2">
+                            <svg class="dark:text-gray-900" width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L7 7L1 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </button>
+    
+                    </div>
+    
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="mx-auto container flex justify-center mt-12">
+        <h1 class="mx-auto text-4xl sm:text-7xl">Saved Recipes</h1>
+    </section>
+    
+
+    <section id="savedRecipes" class="mx-auto container flex justify-center mt-12">
+   
+        <div id="savedContainer" class="container h-fit flex px-3 py-8 gap-y-5 w-full mx-auto flex flex-wrap grid-rows-2 lg:grid-rows-1 lg:grid lg:grid-cols-2 ">
+
+            <div id="" class="savedDisplay sm:px-2  mx-auto pb-20 grid-rows-2 border border-gray-600">
+                <h1 class="mx-auto mb-2 text-4xl sm:text-5xl text-center">
+                    Food Recipes
+                </h1>
+
+                <div class="w-full relative flex items-center  justify-center h-full">
+
+
                 <div class="flex items-center justify-center w-full h-full ">
                         <div id="foodRecipeSearchResults" class="w-full relative flex items-center  justify-center h-full">
+
                             <button aria-label="slide backward"
                                 class=" bg-gray-200 p-3 opacity-50 border rounded-full absolute z-30 left-0 ml-10 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer"
-                                id="prev2">
+                                id="prev3">
                                 <svg class="text-gray-900" width="8" height="14" viewBox="0 0 8 14" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path d="M7 1L1 7L7 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -231,21 +295,23 @@
                                 </svg>
                             </button>
                             <div id="" class="cardRecipie h-full mx-auto overflow-x-hidden overflow-y-hidden">
-                                <div id="slider2"
+                                <div id="slider3"
                                     class="h-full flex lg:gap-8 md:gap-6 gap-14 transition ease-out duration-700">
 
-
                                     <div class="flex flex-shrink-0 relative w-full sm:w-auto">
 
                                         <div class="bg-white rounded w-80 mx-auto rounded-2xl shadow-lg">
-
                                             <div class="bg-gray-200 h-56 p-3 overflow-hidden  ">
-                                                <img  id="firstimage0" src="assets/images/dry-food-1-1574307.jpg" alt="">
+                                                <img  id="historyimage0" src="assets/images/dry-food-1-1574307.jpg" alt="">
                                             </div>
                                             <div class=" p-3">
                                                 <div class="grid grid-cols-1 gap-4 mt-2">
                                                     <div class="h-8 bg-gray-200 rounded   justify-self-center">
+
+                                                        <h3 id="historyname0">Name of Recipie</h3>
+
                                                         <h3 id="recipieName0">Name of Recipie</h3>
+
                                                     </div>
                                                     <div class="h-24 bg-gray-200 rounded  ">
                                                         <h6>discription of recipie</h3>
@@ -285,13 +351,18 @@
                                     <div class="flex flex-shrink-0 relative w-full sm:w-auto">
 
                                         <div class="bg-white rounded w-80 mx-auto rounded-2xl shadow-lg">
+
                                             <div class="bg-gray-200 h-56 p-3 overflow-hidden  ">
-                                                <img src="assets/images/dry-food-1-1574307.jpg" alt="">
+                                                <img id="history1" src="assets/images/dry-food-1-1574307.jpg" alt="">
                                             </div>
                                             <div class=" p-3">
                                                 <div class="grid grid-cols-1 gap-4 mt-2">
                                                     <div class="h-8 bg-gray-200 rounded   justify-self-center">
-                                                        <h3>Name of Recipie</h3>
+                                                        <h3 id="historyname1">Name of Recipie</h3>
+
+                                            
+                                                        
+
                                                     </div>
                                                     <div class="h-24 bg-gray-200 rounded  ">
                                                         <h6>discription of recipie</h3>
@@ -328,52 +399,7 @@
                                         </div>
 
                                     </div>
-                                    <div class="flex flex-shrink-0 relative w-full sm:w-auto">
 
-                                        <div class="bg-white rounded w-80 mx-auto rounded-2xl shadow-lg">
-                                            <div class="bg-gray-200 h-56 p-3 overflow-hidden  ">
-                                                <img src="assets/images/dry-food-1-1574307.jpg" alt="">
-                                            </div>
-                                            <div class=" p-3">
-                                                <div class="grid grid-cols-1 gap-4 mt-2">
-                                                    <div class="h-8 bg-gray-200 rounded   justify-self-center">
-                                                        <h3>Name of Recipie</h3>
-                                                    </div>
-                                                    <div class="h-24 bg-gray-200 rounded  ">
-                                                        <h6>discription of recipie</h3>
-                                                    </div>
-                                                </div>
-                                                <div class="pt-2 flex justify-around">
-                                                    <div>
-                                                        <img src="assets/images/spoonacular-score-25.svg" class="badge h-12"
-                                                            alt="spoonacular Score:22%" title="spoonacular Score:22%">
-                                                        <p class="center">Score:</p>
-                                                    </div>
-                                                    <div>
-                                                        <img src="assets/images/fast.svg" class="badge h-12"
-                                                            alt="spoonacular Score:22%" title="spoonacular Score:22%">
-                                                        <p class="inline center">Time:</p>
-                                                    </div>
-
-
-                                                </div>
-
-                                                <div class="mt-10 flex justify-around items-center">
-
-                                                    <input class="pl-2 border h-10" type="text"
-                                                        placeholder="Enter your Email">
-
-                                                    <img class="h-10" src="assets/images/icons8-send-64.png"
-                                                        alt="send icon">
-
-
-                                                </div>
-
-
-                                            </div>
-                                        </div>
-
-                                    </div>
                                     
                                 </div>
                                 
@@ -470,8 +496,7 @@
                             <div id="" class="cardRecipie h-full mx-auto overflow-x-hidden overflow-y-hidden">
                                 <div id="slider3"
                                     class="h-full flex lg:gap-8 md:gap-6 gap-14 transition ease-out duration-700">
-
-                                    <div class="flex flex-shrink-0 relative w-full sm:w-auto">
+                     <div class="flex flex-shrink-0 relative w-full sm:w-auto">
 
                                         <div class="bg-white rounded w-80 mx-auto rounded-2xl shadow-lg">
                                             <div class="bg-gray-200 h-56 p-3 overflow-hidden  ">
@@ -480,7 +505,7 @@
                                             <div class=" p-3">
                                                 <div class="grid grid-cols-1 gap-4 mt-2">
                                                     <div class="h-8 bg-gray-200 rounded   justify-self-center">
-                                                        <h3>Name of Recipie</h3>
+                                                        <h3 id="historyname2">Name of Recipie</h3>
                                                     </div>
                                                     <div class="h-24 bg-gray-200 rounded  ">
                                                         <h6>discription of recipie</h3>
@@ -519,16 +544,19 @@
                                     </div>
                                     <div class="flex flex-shrink-0 relative w-full sm:w-auto">
                                         <div class="bg-white rounded w-80 mx-auto rounded-2xl shadow-lg">
-
                                             <div class="bg-gray-200 h-56 p-3 overflow-hidden  ">
-                                                <img id="history0" src="assets/images/dry-food-1-1574307.jpg" alt="">
+                                                <img src="assets/images/dry-food-1-1574307.jpg" alt="">
                                             </div>
                                             <div class=" p-3">
                                                 <div class="grid grid-cols-1 gap-4 mt-2">
                                                     <div class="h-8 bg-gray-200 rounded   justify-self-center">
+
+                                                        <h3 id="historyname3">Name of Recipie</h3>
+
                                                         <h3 id="historyname0">Name of Recipie</h3>
                                            
                                                       
+
                                                     </div>
                                                     <div class="h-24 bg-gray-200 rounded  ">
                                                         <h6>discription of recipie</h3>
@@ -569,7 +597,7 @@
 
                                         <div class="bg-white rounded w-80 mx-auto rounded-2xl shadow-lg">
                                             <div class="bg-gray-200 h-56 p-3 overflow-hidden  ">
-                                                <img src="assets/images/dry-food-1-1574307.jpg" alt="">
+                                                <img  id="historyname 4"src="assets/images/dry-food-1-1574307.jpg" alt="">
                                             </div>
                                             <div class=" p-3">
                                                 <div class="grid grid-cols-1 gap-4 mt-2">
@@ -631,6 +659,12 @@
                                             </div>
                                         </div>
                                     </div>
+
+                                   
+                                    
+                                    
+
+
                                 </div>
                             </div>
                             <button aria-label="slide forward"

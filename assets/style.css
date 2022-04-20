@@ -41,7 +41,17 @@
   color: #557B83 ;
 }
 
+.missedIngredients { 
+  column-count: 2;
+}
 
+.seeFullRecipeBtn:hover{
+  transform: scale(110%);
+
+}
+#recipiecarrasoul{
+  background-color: #A2D5AB;
+}
 
 .work-sans {
     font-family: 'Work Sans', sans-serif;
