@@ -414,7 +414,6 @@ function appendHistory() {
     console.log(savedSearch[0].id);
     for (var i = 0; i< savedSearch.length; i++){
         var savedFoodId = savedSearch[i].id
-        
      $("#historyimage"+[i]).attr("src", `https://spoonacular.com/recipeImages/${savedFoodId}-312x231.jpg`);
      $("#historyname"+[i]).text(savedSearch[i].title);
     }
