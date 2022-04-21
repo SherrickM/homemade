@@ -248,7 +248,7 @@ function searchApi() {
                                             <div class="mt-8 mb-8 flex justify-around w-80 mx-auto">
                                                 
                                                     <div>
-                                                        <img src="assets/images/spoonacular-score-25.svg" class="badge h-12"
+                                                        <img src="assets/images/popular.svg" class="badge h-12"
                                                             alt="spoonacular Score:22%" title="spoonacular Score:22%">
                                                         <p  id = "score${i}" class="center text-">Likes: ${(response[i].likes)}</p>
                                                     </div>
