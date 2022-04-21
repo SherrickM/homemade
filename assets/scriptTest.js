@@ -54,7 +54,7 @@ var ingredientsList = [];
 var searchBtn = $("#searchBtn")
 console.log(searchBtn)
 
-var ApiKeyGedion = "d814cc11a8744e6bb7d9a18faa6b7f17";
+var ApiKeyGedion = "820e8a82b4dc451a8a662f4ae853fb43";
 
 
 // // intilizises local storage and populates ingredents list var if not empty
@@ -208,67 +208,95 @@ function searchApi() {
 
                 for (var i = 0; i < response.length; i++) {
                     var id = response[i].id;
-                    var missedIng = response[i].missedIngredients;
-                    var RecipieTitle = response[i].title
+                    // var listitem = [];
+                    // var listcontainer = $("#listcontainer"+[i])
+                    // var missedIng = response[i].missedIngredients;
+                    // for (var j = 0; j < missedIng.length; j++) {
+                    //         listitem.push(missedIng[j].name);
+                    //         }
+                   
 
 
-
-                    // var listitem =
-                    // (var j = 0; j < missedIng.length; j++){
-                    //     var listitem = $("<li>");
-                    //     listitem.text(missedIng[j].name);
-                    //     list.append(listitem);
-                    //     })
-                    var cardhtml = $(`<div id = "foorSearchResults"+${i} class=" cardContainer px-3 py-3 flex flex-shrink-0 relative sm:mr-12  w-full  sm:w-96">
-    
-            <div class="card py-2 bg-white rounded  mx-auto rounded-2xl shadow-md sm:w-96 ">
-                <div class="p-2  drop-shadow-lg">
-                    <img class=" mx-auto rounded drop-shadow-lg" src="https://spoonacular.com/recipeImages/${id}-312x231.jpg" alt="image of recipie">
-                </div>
-                <h1 class="text-4xl text-center px-4">
-                ${(response[i].title)}
-                </h1>
-                <div class="border border-green-800 w-64 mx-auto my-2"></div>
-                <h3 class="text-center text-2xl px-4 ">
-                    Remaining ingredients Needed:
-                </h3>
-                <div class="border border-black rounded w-64 h-32 mx-auto mt-2 drop-shadow-md">
-                    <ul id="" class="missedIngredients ml-5 pl-2 pt-2 w-64 h-32 list-decimal">
-                        <li>fghdfgh</li>
-                    </ul>                               
-                </div>
-                <div id="" class="seeFullRecipeBtn rounded-full mx-auto shadow-2xl flex w-64 justify-center mt-6 border hover:cursor-pointer">
-                    <a class=" " href="">See Full Recipe Here</a>
-                </div>
-                <div id="" class="seeFullRecipeBtn rounded-full mx-auto shadow-2xl flex w-64 justify-center mt-6 border hover:cursor-pointer">
-                        g<a class=" " href="">Save Recipe</a>
-                </div>
-    
-                <div class="mt-8 mb-8 flex justify-around w-80 mx-auto">
+                    var cardhtml = $(`  <div id = "foorSearchResults${i}" class=" cardContainer px-3 py-3 flex flex-shrink-0 relative sm:mr-12  w-full  sm:w-96">
+        
+                                            <div class="card py-2 bg-white rounded  mx-auto rounded-2xl shadow-md sm:w-96 ">
+                                            <div class="p-2  drop-shadow-lg">
+                                                <img class=" mx-auto rounded drop-shadow-lg" src="https://spoonacular.com/recipeImages/${id}-312x231.jpg" alt="image of recipie">
+                                            </div>
+                                            <h1 class="text-4xl text-center px-4">
+                                            ${(response[i].title)}
+                                            </h1>
+                                            <div class="border border-green-800 w-64 mx-auto my-2"></div>
+                                            <h3 class="text-center text-2xl px-4 ">
+                                                Remaining ingredients Needed:
+                                            </h3>
+                                            <div class="border border-black rounded w-64 h-32 mx-auto mt-2 drop-shadow-md">
+                                                <ul id="listcontainer${i}" class="missedIngredients ml-5 pl-2 pt-2 w-64 h-32 list-decimal">
+                                                    <li>${listitem}</li>
+                                                </ul>                               
+                                            </div>
+                                            <div id="" class="seeFullRecipeBtn rounded-full mx-auto shadow-2xl flex w-64 justify-center mt-6 border hover:cursor-pointer">
+                                                <a  id = "seeFull${i}" class=" " href="">See Full Recipe Here</a>
+                                            </div>
+                                            <div id="" class="seeFullRecipeBtn rounded-full mx-auto shadow-2xl flex w-64 justify-center mt-6 border hover:cursor-pointer">
+                                                    <a class=" " href="">Save Recipe</a>
+                                            </div>
+                                
+                                            <div class="mt-8 mb-8 flex justify-around w-80 mx-auto">
+                                                
+                                                    <div>
+                                                        <img src="assets/images/spoonacular-score-25.svg" class="badge h-12"
+                                                            alt="spoonacular Score:22%" title="spoonacular Score:22%">
+                                                        <p  id = "score${i}" class="center text-">Score: </p>
+                                                    </div>
+                                                    <div>
+                                                        <img src="assets/images/fast.svg" class="badge h-12"
+                                                            alt="spoonacular Score:22%" title="spoonacular Score:22%">
+                                                        <p  id = "cookTime${i}" class="inline center">Time:</p>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>`);
+                                        
                     
-                        <div>
-                            <img src="assets/images/spoonacular-score-25.svg" class="badge h-12"
-                                alt="spoonacular Score:22%" title="spoonacular Score:22%">
-                            <p class="center text-">Score: </p>
-                        </div>
-                        <div>
-                            <img src="assets/images/fast.svg" class="badge h-12"
-                                alt="spoonacular Score:22%" title="spoonacular Score:22%">
-                            <p  id = "cookTime"${i} class="inline center">Time:</p>
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>`);
+                                       
+
+                                       
+                    
+                                       
                     sliderEl.append(cardhtml);
                     searchedID.push(id);
+                    console.log(listitem)
                 }
+                var listitem = [];
+                response.forEach((value, key) => {
+                    listItemzzz = [];
+                    missedIngredientszz = value.missedIngredients
+                    missedIngredientszz.forEach((value, key) => {
+                        listItemzzz.push(value.name)
+                    });
+                    listItemzzz.forEach((value, key) => {
+                        var listcontainer = "#listcontainer"+key;
+                        var listcontainerselctor = $(listcontainer);
+                        var renderlist = $(`<li>${value}</li>`);
+                        listcontainerselctor.append(renderlist)
+                    });
+                });
                 fetch(`https://api.spoonacular.com/recipes/informationBulk?apiKey=${ApiKeyGedion}&ids=${searchedID}`)
                     .then(function (response2) {
                         return response2.json();
                     })
                     .then(function (response2) {
                         localStorage.setItem("storedBulkSearch", JSON.stringify(response2));
+                        for(var i = 0; i<response2.length; i++){
+                            console.log(response2[i].readyInMinutes)
+                                $("#cookTime"+[i]).text("Time : " +  response2[i].readyInMinutes + " mins.")
+                                $("#score"+[i]).text("Score : " +  response2[i].spoonacularScore)
+                                $("#seeFull"+[i]).attr("href",  response2[i].sourceUrl)
+                        }
+                        
+                        
                     })
 
             });
@@ -302,10 +330,8 @@ function searchApi() {
 
     };
 }
+  
 
-// function appendHistory() {
-//     var savedSearch = JSON.parse(localStorage.getItem("storedSearch"));
-//     };
 
 
 // appendHistory();
