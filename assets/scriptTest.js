@@ -240,6 +240,9 @@ function searchApi() {
                 <div id="" class="seeFullRecipeBtn rounded-full mx-auto shadow-2xl flex w-64 justify-center mt-6 border hover:cursor-pointer">
                     <a class=" " href="">See Full Recipe Here</a>
                 </div>
+                <div id="" class="seeFullRecipeBtn rounded-full mx-auto shadow-2xl flex w-64 justify-center mt-6 border hover:cursor-pointer">
+                        g<a class=" " href="">Save Recipe</a>
+                </div>
     
                 <div class="mt-8 mb-8 flex justify-around w-80 mx-auto">
                     
@@ -253,9 +256,10 @@ function searchApi() {
                                 alt="spoonacular Score:22%" title="spoonacular Score:22%">
                             <p  id = "cookTime"${i} class="inline center">Time:</p>
                         </div>
+                        
+                    </div>
                 </div>
-            </div>
-        </div>`);
+            </div>`);
                     sliderEl.append(cardhtml);
                     searchedID.push(id);
                 }
