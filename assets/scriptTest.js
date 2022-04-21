@@ -209,16 +209,16 @@ function searchApi() {
 
 
                 for (var i = 0; i < response.length; i++) {
-                    // creates a variable for the IDs that has been looping through
+                //     // creates a variable for the IDs that has been looping through
                     var id = response[i].id;
-                    // empty array to add the ingrediants as the functions loops through
-                    var listitem = [];
-                   // selects missing ingrediants from the fetched data
-                    var missedIng = response[i].missedIngredients;
-                    // adds missing ingredients to the empty array. 
-                    for (var j = 0; j < missedIng.length; j++) {
-                            listitem.push(missedIng[j].name);
-                            }
+                //     // empty array to add the ingrediants as the functions loops through
+                //     var listitem = [];
+                //    // selects missing ingrediants from the fetched data
+                //     var missedIng = response[i].missedIngredients;
+                //     // adds missing ingredients to the empty array. 
+                //     for (var j = 0; j < missedIng.length; j++) {
+                //             listitem.push(missedIng[j].name);
+                //             }
                    
 
                             // creates a card Html  variable to be appended to the DOM.
@@ -235,24 +235,22 @@ function searchApi() {
                                             <h3 class="text-center text-2xl px-4 ">
                                                 Remaining ingredients Needed:
                                             </h3>
-                                            <div class="border border-black rounded w-64 h-32 mx-auto mt-2 drop-shadow-md">
+                                            <div class="border border-black rounded w-72 h-32 mx-auto mt-2 drop-shadow-md">
                                                 <ul id="listcontainer${i}" class="missedIngredients ml-5 pl-2 pt-2 w-64 h-32 list-decimal">
-                                                    <li>${listitem}</li>
+                                                    
                                                 </ul>                               
                                             </div>
                                             <div id="" class="seeFullRecipeBtn rounded-full mx-auto shadow-2xl flex w-64 justify-center mt-6 border hover:cursor-pointer">
                                                 <a  id = "seeFull${i}" class=" " href="">See Full Recipe Here</a>
                                             </div>
-                                            <div id="" class="seeFullRecipeBtn rounded-full mx-auto shadow-2xl flex w-64 justify-center mt-6 border hover:cursor-pointer">
-                                                    <a id = "savedchoice${i}" href="">Save Recipe</a>
-                                            </div>
+                                           
                                 
                                             <div class="mt-8 mb-8 flex justify-around w-80 mx-auto">
                                                 
                                                     <div>
                                                         <img src="assets/images/spoonacular-score-25.svg" class="badge h-12"
                                                             alt="spoonacular Score:22%" title="spoonacular Score:22%">
-                                                        <p  id = "score${i}" class="center text-">Score: </p>
+                                                        <p  id = "score${i}" class="center text-">Likes: ${(response[i].likes)}</p>
                                                     </div>
                                                     <div>
                                                         <img src="assets/images/fast.svg" class="badge h-12"
@@ -276,21 +274,22 @@ function searchApi() {
                     console.log(listitem)
                 }
                 // another option to render missing ingrediants list in the cards
-                // // var listitem = [];
-                // // response.forEach((value, key) => {
-                // //     listItemzzz = [];
-                // //     missedIngredientszz = value.missedIngredients
-                // //     missedIngredientszz.forEach((value, key) => {
-                // //         listItemzzz.push(value.name)
-                // //     });
-                // //     listItemzzz.forEach((value, key) => {
-                // //         var listcontainer = "#listcontainer"+key;
-                // //         var listcontainerselctor = $(listcontainer);
-                // //         var renderlist = $(`<li>${value}</li>`);
-                // //         listcontainerselctor.append(renderlist)
-                // //     });
-                // //     console.log(listItemzzz)
-                // });
+                var listitem = [];
+                response.forEach((value, key) => {
+                    var cardKey = key
+                    listItemzzz = [];
+                    missedIngredientszz = value.missedIngredients
+                    missedIngredientszz.forEach((value, key) => {
+                        listItemzzz.push(value.name)
+                    });
+                    listItemzzz.forEach((value, key) => {
+                        var listcontainer = "#listcontainer"+cardKey;
+                        var listcontainerselctor = $(listcontainer);
+                        var renderlist = $(`<li>${value}</li>`);
+                        listcontainerselctor.append(renderlist)
+                    });
+                    console.log(listItemzzz)
+                });
 
                 // fetches bulk data from the api using recipe ids
                 fetch(`https://api.spoonacular.com/recipes/informationBulk?apiKey=${ApiKeyGedion}&ids=${searchedID}`)
@@ -304,7 +303,7 @@ function searchApi() {
                             // updates the results card with cook time, score and a Url to the recipe site
 
                                 $("#cookTime"+[i]).text("Time : " +  response2[i].readyInMinutes + " mins.")
-                                $("#score"+[i]).text("Score : " +  response2[i].spoonacularScore)
+                                // $("#score"+[i]).text("Score : " +  response2[i].spoonacularScore)
                                 $("#seeFull"+[i]).attr("href",  response2[i].sourceUrl)
                         }
                         
