@@ -20,7 +20,7 @@
 
 ## Mock Up
 
-![Mock Up](/assets/images/Screen%20Shot%202022-04-22%20at%209.12.03%20PM.png)
+![Mock Up](/assets/images/Screen%20Shot%202022-04-23%20at%209.12.01%20AM.png)
 
 ## Weekly Task/Acceptance Criteria
 
