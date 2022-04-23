@@ -54,7 +54,7 @@ var ingredientsList = [];
 var searchBtn = $("#searchBtn")
 // console.log(searchBtn)
 
-var ApiKeyGedion = "820e8a82b4dc451a8a662f4ae853fb43";
+var ApiKeyGedion = "d814cc11a8744e6bb7d9a18faa6b7f17";
 
 
 // // intilizises local storage and populates ingredents list var if not empty
@@ -230,60 +230,76 @@ function searchApi() {
                                                     
                                                 </ul>                               
                                             </div>
-                                            <div id="" class="seeFullRecipeBtn rounded-full mx-auto shadow-2xl flex w-64 justify-center mt-6 border hover:cursor-pointer">
-                                                <a class=" " href="">See Full Recipe Here</a>
-                                            </div>
-                                            <div id="" class="seeFullRecipeBtn rounded-full mx-auto shadow-2xl flex w-64 justify-center mt-6 border hover:cursor-pointer">
-                                                    <a class=" " href="">Save Recipe</a>
-                                            </div>
-                                
                                             <div class="mt-8 mb-8 flex justify-around w-80 mx-auto">
                                                 
                                                     <div>
-                                                        <img src="assets/images/spoonacular-score-25.svg" class="badge h-12"
-                                                            alt="spoonacular Score:22%" title="spoonacular Score:22%">
-                                                        <p class="center text-">Score: </p>
-                                                    </div>
-                                                    <div>
-                                                        <img src="assets/images/fast.svg" class="badge h-12"
-                                                            alt="spoonacular Score:22%" title="spoonacular Score:22%">
-                                                        <p  id = "cookTime${i}" class="inline center">Time:</p>
-                                                    </div>
-                                                    
+                                                    <div id="" class="seeFullRecipeBtn rounded-full mx-auto shadow-2xl flex w-64 justify-center mt-6 border hover:cursor-pointer">
+                                                    <a  id = "seeFull${i}" class=" " href="">See Full Recipe Here</a>
                                                 </div>
-                                            </div>
-                                        </div>`);
-
-
-
-                    sliderEl.append(cardhtml);
-                    searchedID.push(id)
-                }
-
-                var listitem = [];
-
-                response.forEach((value, key) => {
-                    listItemzzz = [];
-                    missedIngredientszz = value.missedIngredients
-                    missedIngredientszz.forEach((value, key) => {
-                        listItemzzz.push(value.name)
+                                               
+                                    
+                                                <div class="mt-8 mb-8 flex justify-around w-80 mx-auto">
+                                                    
+                                                        <div>
+                                                            <img src="assets/images/popular.svg" class="badge h-12"
+                                                                alt="spoonacular Score:22%" title="spoonacular Score:22%">
+                                                            <p  id = "score${i}" class="center text-">Likes: ${(response[i].likes)}</p>
+                                                        </div>
+                                                        <div>
+                                                            <img src="assets/images/fast.svg" class="badge h-12"
+                                                                alt="spoonacular Score:22%" title="spoonacular Score:22%">
+                                                            <p  id = "cookTime${i}" class="inline center">Time:</p>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>`);
+                                            
+                        
+                                           
+                                           
+                        
+                        // appends the results card with all the information to the html                   
+                        sliderEl.append(cardhtml);
+                        // creates array of IDs used to fetch bulk info. for the recipe. 
+                        searchedID.push(id);
+                        console.log(listitem)
+                    }
+                    // another option to render missing ingrediants list in the cards
+                    var listitem = [];
+                    response.forEach((value, key) => {
+                        var cardKey = key
+                        listItemzzz = [];
+                        missedIngredientszz = value.missedIngredients
+                        missedIngredientszz.forEach((value, key) => {
+                            listItemzzz.push(value.name)
+                        });
+                        listItemzzz.forEach((value, key) => {
+                            var listcontainer = "#listcontainer"+cardKey;
+                            var listcontainerselctor = $(listcontainer);
+                            var renderlist = $(`<li>${value}</li>`);
+                            listcontainerselctor.append(renderlist)
+                        });
+                        console.log(listItemzzz)
                     });
-                    listItemzzz.forEach((value, key) => {
-                        var listcontainer = "#listcontainer" + key;
-                        var listcontainerselctor = $(listcontainer);
-                        var renderlist = $(`<li>${value}</li>`);
-                        listcontainerselctor.append(renderlist)
-                    });
+                    // fetches bulk data from the api using recipe ids
+                    fetch(`https://api.spoonacular.com/recipes/informationBulk?apiKey=${ApiKeyGedion}&ids=${searchedID}`)
+                        .then(function (response2) {
+                            return response2.json();
+                        })
+                        .then(function (response2) {
+                            localStorage.setItem("storedBulkSearch", JSON.stringify(response2));
+                            for(var i = 0; i<response2.length; i++){
+                                
+                                // updates the results card with cook time, score and a Url to the recipe site
+                                    $("#cookTime"+[i]).text("Time : " +  response2[i].readyInMinutes + " mins.")
+                                    // $("#score"+[i]).text("Score : " +  response2[i].spoonacularScore)
+                                    $("#seeFull"+[i]).attr("href",  response2[i].sourceUrl)
+                            }
+                            
+                            
+                        })
                 });
-                fetch(`https://api.spoonacular.com/recipes/informationBulk?apiKey=${ApiKeyGedion}&ids=${searchedID}`)
-                    .then(function (response2) {
-                        return response2.json();
-                    })
-                    .then(function (response2) {
-                        localStorage.setItem("storedBulkSearch", JSON.stringify(response2));
-                    })
-
-            });
     } else {
         var apiDrinkIngredients = drinkIngredients[0]
         var sliderEl = $("#slider2");
