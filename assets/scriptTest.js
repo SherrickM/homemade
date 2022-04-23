@@ -54,7 +54,7 @@ var ingredientsList = [];
 var searchBtn = $("#searchBtn")
 // console.log(searchBtn)
 
-var ApiKeyGedion = "d814cc11a8744e6bb7d9a18faa6b7f17";
+var ApiKeyGedion = "013fd8b3a54f4520995e24120d4dc79d";
 
 
 // // intilizises local storage and populates ingredents list var if not empty
