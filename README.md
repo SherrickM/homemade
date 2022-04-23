@@ -26,11 +26,12 @@
 #### Trevor
 
 > - Add HTML/CSS Frame Work
-> - Fixed delete button
+> - Debugging
 > - Added Seach functionality
 > - local storage
+> - added delete button
 
-#### Gideon
+#### Gedion
 
 > - Food API
 > - Fetch functionality
@@ -41,12 +42,13 @@
 
 > - Drink API
 > - local storage
+> - Debugging
 
 #### Sherrick
 
-> - Complete WireFrame
+> - Completed WireFrame
 > - Updated ReadME
-> -
+> - html/css framework
 
 ### Week 2
 
@@ -54,6 +56,7 @@
 
 > - Added toggle button
 > - Drink API
+> - Debugging
 
 #### Gideon
 
