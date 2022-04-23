@@ -8,29 +8,31 @@
 
 - As a user, I should be able to add add a item of food or liquor.
 - As a user, I should be able to search for recipes based on the ingredients I have on hand.
-- As a user, I will have a recipe displayed for me to follow along with.
+- As a user, I should be able to see missing igredients
+- As a user, I will have a the ability to click on the full recipe.
 - As a user, I should be able to toggle between asking for a food/drink recipe.
-- As a user, I should be able to have the recipe e-mailed to me.
 
 ## Wire Frame
 
-![WifeFrame Landing Page](./assets/images/Screen%20Shot%202022-04-22%20at%209.12.03%20PM.png)
+![WireFrame Landing Page](./assets/images/Screen%20Shot%202022-04-22%20at%209.12.03%20PM.png)
+
 ![Recipe Page](./assets/images/Screen%20Shot%202022-04-22%20at%209.12.22%20PM.png)
 
 ## Mock Up
 
-## Weekly Task/Acceotance Criteria
+## Weekly Task/Acceptance Criteria
 
 ### Week 1
 
 #### Trevor
 
 > - Add HTML/CSS Frame Work
-> - Fixed delete buttom
+> - Debugging
 > - Added Seach functionality
 > - local storage
+> - added delete button
 
-#### Gideon
+#### Gedion
 
 > - Food API
 > - Fetch functionality
@@ -41,12 +43,13 @@
 
 > - Drink API
 > - local storage
+> - Debugging
 
 #### Sherrick
 
-> - Complete WireFrame
+> - Completed WireFrame
 > - Updated ReadME
-> -
+> - html/css framework
 
 ### Week 2
 
@@ -54,8 +57,9 @@
 
 > - Added toggle button
 > - Drink API
+> - Debugging
 
-#### Gideon
+#### Gedion
 
 > - Continued to work with food API
 > - getting second
