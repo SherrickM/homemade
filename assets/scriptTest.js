@@ -352,6 +352,13 @@ function searchApi() {
     };
 }
 
+function DrinkApiResponse(){
+    return {
+        drinks: []
+    }
+}
+
+
 // adds funtionality to delete button
 // on click of delete button, run function deleteListItem
 $("#ingredientsListSaved").on("click", ".deleteBtn", deleteListItem);
@@ -444,3 +451,4 @@ function goPrev4() {
 }
 //prev.addEventListener("click", goPrev);
 prev4.on("click", goPrev4);
+
