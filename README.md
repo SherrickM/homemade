@@ -20,6 +20,8 @@
 
 ## Mock Up
 
+![Mock Up](/assets/images/Screen%20Shot%202022-04-22%20at%209.12.03%20PM.png)
+
 ## Weekly Task/Acceptance Criteria
 
 ### Week 1
@@ -68,8 +70,8 @@
 
 #### Christiana
 
-> Drink API
-> Presentation
+> - Drink API
+> - Presentation
 
 #### Sherrick
 
@@ -84,3 +86,11 @@
 2. Gedion A
 3. Sherrick M
 4. Trevor H
+
+## Github Repo
+
+> https://github.com/SherrickM/homemade
+
+## Deployed Application
+
+>
