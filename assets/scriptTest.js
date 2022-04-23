@@ -243,60 +243,6 @@ function foodApiSearch(apiingredients, sliderEl) {
 
             localStorage.setItem("storedSearch", JSON.stringify(response));
 
-
-            for (var i = 0; i < response.length; i++) {
-                //     // creates a variable for the IDs that has been looping through
-                var recipeObj = response[i];
-                var card = createResultsCard(recipeObj, i);
-                // appends the results card with all the information to the html                   
-                sliderEl.append(card);
-                // creates array of IDs used to fetch bulk info. for the recipe. 
-                searchedID.push(recipeObj.id);
-                console.log(listitem)
-            }
-            // another option to render missing ingrediants list in the cards
-            var listitem = [];
-            response.forEach((value, key) => {
-                var cardKey = key
-                listItemzzz = [];
-                missedIngredientszz = value.missedIngredients
-                missedIngredientszz.forEach((value, key) => {
-                    listItemzzz.push(value.name)
-                });
-                listItemzzz.forEach((value, key) => {
-                    var listcontainer = "#listcontainer" + cardKey;
-                    var listcontainerselctor = $(listcontainer);
-                    var renderlist = $(`<li>${value}</li>`);
-                    listcontainerselctor.append(renderlist)
-                });
-                console.log(listItemzzz)
-            });
-
-           
-
-        });
-}
- function foodDetailedApi (){
-      // fetches bulk data from the api using recipe ids
-      fetch(`https://api.spoonacular.com/recipes/informationBulk?apiKey=${ApiKeyGedion}&ids=${searchedID}`)
-      .then(function (response2) {
-          return response2.json();
-      })
-      .then(function (response2) {
-          localStorage.setItem("storedBulkSearch", JSON.stringify(response2));
-          for (var i = 0; i < response2.length; i++) {
-
-              // updates the results card with cook time, score and a Url to the recipe site
-
-              $("#cookTime" + [i]).text("Time : " + response2[i].readyInMinutes + " mins.")
-              // $("#score"+[i]).text("Score : " +  response2[i].spoonacularScore)
-              $("#seeFull" + [i]).attr("href", response2[i].sourceUrl)
-          }
-
-
-      })
- }
-
 // a function that searchs the api and appends cards
 function searchApi() {
 
@@ -306,11 +252,121 @@ function searchApi() {
         sliderEl.empty();
 
         var apiingredients = ingredientsList.join(",+")
+        
+        //fetchs data from the spponacular api
 
         //fetchs data from the spponacular api
         foodApiSearch(apiingredients,sliderEl);
         foodDetailedApi();
 
+            .then(function (response) {
+
+                localStorage.setItem("storedSearch", JSON.stringify(response));
+
+
+                for (var i = 0; i < response.length; i++) {
+                //     // creates a variable for the IDs that has been looping through
+                    var id = response[i].id;
+                //     // empty array to add the ingrediants as the functions loops through
+                //     var listitem = [];
+                //    // selects missing ingrediants from the fetched data
+                //     var missedIng = response[i].missedIngredients;
+                //     // adds missing ingredients to the empty array. 
+                //     for (var j = 0; j < missedIng.length; j++) {
+                //             listitem.push(missedIng[j].name);
+                //             }
+                   
+
+                            // creates a card Html  variable to be appended to the DOM.
+                    var cardhtml = $(`  <div id = "foorSearchResults${i}" class=" cardContainer px-3 py-3 flex flex-shrink-0 relative sm:mr-12  w-full  sm:w-96">
+        
+                                            <div class="card py-2 bg-white rounded  mx-auto rounded-2xl shadow-md sm:w-96 ">
+                                            <div class="p-2  drop-shadow-lg">
+                                                <img class=" mx-auto rounded drop-shadow-lg" src="https://spoonacular.com/recipeImages/${id}-312x231.jpg" alt="image of recipie">
+                                            </div>
+                                            <h1 class="text-4xl text-center px-4">
+                                            ${(response[i].title)}
+                                            </h1>
+                                            <div class="border border-green-800 w-64 mx-auto my-2"></div>
+                                            <h3 class="text-center text-2xl px-4 ">
+                                                Remaining ingredients Needed:
+                                            </h3>
+                                            <div class="border border-black rounded w-72 h-32 mx-auto mt-2 drop-shadow-md">
+                                                <ul id="listcontainer${i}" class="missedIngredients ml-5 pl-2 pt-2 w-64 h-32 list-decimal">
+                                                    
+                                                </ul>                               
+                                            </div>
+                                            <div id="" class="seeFullRecipeBtn rounded-full mx-auto shadow-2xl flex w-64 justify-center mt-6 border hover:cursor-pointer">
+                                                <a  id = "seeFull${i}" class=" " href="">See Full Recipe Here</a>
+                                            </div>
+                                           
+                                
+                                            <div class="mt-8 mb-8 flex justify-around w-80 mx-auto">
+                                                
+                                                    <div>
+                                                        <img src="assets/images/popular.svg" class="badge h-12"
+                                                            alt="spoonacular Score:22%" title="spoonacular Score:22%">
+                                                        <p  id = "score${i}" class="center text-">Likes: ${(response[i].likes)}</p>
+                                                    </div>
+                                                    <div>
+                                                        <img src="assets/images/fast.svg" class="badge h-12"
+                                                            alt="spoonacular Score:22%" title="spoonacular Score:22%">
+                                                        <p  id = "cookTime${i}" class="inline center">Time:</p>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>`);
+                                        
+                    
+                                       
+
+                                       
+                    
+                    // appends the results card with all the information to the html                   
+                    sliderEl.append(cardhtml);
+                    // creates array of IDs used to fetch bulk info. for the recipe. 
+                    searchedID.push(id);
+                    console.log(listitem)
+                }
+                // another option to render missing ingrediants list in the cards
+                var listitem = [];
+                response.forEach((value, key) => {
+                    var cardKey = key
+                    listItemzzz = [];
+                    missedIngredientszz = value.missedIngredients
+                    missedIngredientszz.forEach((value, key) => {
+                        listItemzzz.push(value.name)
+                    });
+                    listItemzzz.forEach((value, key) => {
+                        var listcontainer = "#listcontainer"+cardKey;
+                        var listcontainerselctor = $(listcontainer);
+                        var renderlist = $(`<li>${value}</li>`);
+                        listcontainerselctor.append(renderlist)
+                    });
+                    console.log(listItemzzz)
+                });
+
+                // fetches bulk data from the api using recipe ids
+                fetch(`https://api.spoonacular.com/recipes/informationBulk?apiKey=${ApiKeyGedion}&ids=${searchedID}`)
+                    .then(function (response2) {
+                        return response2.json();
+                    })
+                    .then(function (response2) {
+                        localStorage.setItem("storedBulkSearch", JSON.stringify(response2));
+                        for(var i = 0; i<response2.length; i++){
+                            
+                            // updates the results card with cook time, score and a Url to the recipe site
+
+                                $("#cookTime"+[i]).text("Time : " +  response2[i].readyInMinutes + " mins.")
+                                // $("#score"+[i]).text("Score : " +  response2[i].spoonacularScore)
+                                $("#seeFull"+[i]).attr("href",  response2[i].sourceUrl)
+                        }
+                        
+                        
+                    })
+
+            });
     } else {
         
             doDrink();
@@ -375,73 +431,6 @@ function doDrink(){
                 }
             }
             ).then(detailedDrinkInfo())
-}
-
-function constructDetails(drinkId) {
-    var rObj =
-    {
-        drinkId: drinkId,
-    }
-
-    rObj.getDetails = function () {
-        fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${this.drinkId}`)
-            .then(function (response2) {
-                response2.json().then(function (d) {
-                    rObj.details = d;
-
-                    //TODO: Add instruction string from rOjb.details.drinks[0].strInstructions
-                    console.log(rObj.details.drinks[0].strInstructions);
-                    var newLi = $("<li>").text(rObj.details.drinks[0].strInstructions);
-                    var instructionSelector= `#instructions${rObj.drinkId}`;
-                    $(instructionSelector).append(newLi);
-                    
-                    
-                });
-            });
-    }
-
-
-    return rObj;
-}
-
-
-console.log(searchedID2);
-
-//TODO:move to global var section
-var detailsLoading = false;
-var detailsInterval = null;
-
-function detailedDrinkInfo() {
-    if (detailsLoading){
-        //do nothing
-        return;
-    }
-    //Set detailsLoading=true to prevent multiple intevals. See line 370.
-    detailsLoading = true;
-
-    //Check for items needing details. Start one gathering opertaion if necessary.
-    detailsInterval = setInterval(function(){
-        //Are there any items missing details
-        var foundItemNeedingDetails = false;
-
-        //Check for items missing details. If necessary get them.
-        for (var i = 0; i < searchedID2.length; i++) {
-            var searchIdToMaybeGatherDetails = searchedID2[i];
-
-            if (!(searchIdToMaybeGatherDetails.details))
-            {
-                searchIdToMaybeGatherDetails.getDetails();
-                foundItemNeedingDetails - true;
-            }
-        }
-        
-      if (!foundItemNeedingDetails)
-      {
-            detailsLoading = false;
-            clearInterval(detailsInterval);
-      }
-
-    }, 100);
 }
 
 

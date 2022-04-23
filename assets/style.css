@@ -1,36 +1,159 @@
 /*   */
 *{
   font-family: 'Montserrat', sans-serif; 
-  color: #557B83;
+  /* color: #557B83; */
+}
+
+/* New Style Test */
+/* ul {
+  list-style: none;
+} */
+
+a {
+  color: #3D3530;
+  text-decoration: none;
+}
+.logo {
+/* background-image: url(/homemade_logo.png) center center;
+background-size: contain; */
+/* background-color: #3D3530; */
+/* width: 25vw;
+height: 15vh; */
+/* border: #3D3530 solid; */
+margin-left: 50px;
+
+}
+
+.logo img{
+  border-bottom: solid #B47F6A 1px;
+  height: 75px;
+  margin-bottom: 10px;
+  /* border-radius: 15px; */
+  
+}
+
+.navbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  /* border: solid black; */
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: space-around;
+  /* border: solid pink ; */
+  width: 20vw;
+  margin-right: 15px;
+
+}
+
+.navbar a:hover {
+  border-bottom: #B47F6A 1px solid ;
+}
+
+.hero{
+  background: url(./images/mediterranean-food-1311330.jpg) no-repeat center center/cover;
+  height: 80vh;
+  position: relative;
+  color: #3D3530
+}
+
+.hero .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100% ;
+  padding: 0 20px;
+
+}
+.hero .content h1{
+  font-size: 56px;
+}
+.hero .content p {
+  font-size: 56px;
+  max-width: 600px;
+  margin: 20px 0 30px;
+}
+
+.innercontent{
+  background-color: #BBB09B ;
+  opacity: .9;
+  border-radius: 15px;
+  padding: 10px;
+
+}
+
+h2{
+  text-align: center;
+  font-size: 48px;
+  background-color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  color: #3D3530;
+}
+/* Nav Mobile */
+@media (max-width:500px) {
+  .navbar ul{
+    flex-direction: column;
+  }
+}
+
+/* btn */
+
+.btn{
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 30px ;
+  color: #ffffff;
+  background-color: #59524A;
+  border: none;
+  border-radius: 5px;
+
+}
+
+.white-space{
+  background-color: #ffffff;
+  border: #000;
+  width: 100%;
+  height: 15vh;
+}
+
+.btn:hover{
+  background-color: #ffffff;
+  color: #3D3530;
 }
 
 
+/* my code stops here */
 .bgDark{
-  background-color: #557B83;
+  /* background-color: #557B83; */
 
 }
 
 .bgMidD {
-  background-color: #39AEA9;
-
+  /* background-color: #39AEA9; */
+  
 }
 
 .bgMidL {
-  background-color: #A2D5AB;
-
+  /* background-color: #A2D5AB; */
+  border-bottom: solid 2px #B47F6A;
 }
 
 .bgLight {
-  background-color: #E5EFC1;
+  /* background-color: lightslategray; */
 
 }
 
 .textlight{
-  color: #E5EFC1;
+  /* color: #E5EFC1; */
 }
 
 .textMidLight{
-  color: #A2D5AB ;
+  /* color: #A2D5AB ; */
 }
 
 .textMidDark{
@@ -38,7 +161,7 @@
 }
 
 .textDark {
-  color: #557B83 ;
+  /* color: pink ; */
 }
 
 .missedIngredients { 
@@ -50,7 +173,7 @@
 
 }
 #recipiecarrasoul{
-  background-color: #A2D5AB;
+  /* background-color: #A2D5AB; */
 }
 
 .work-sans {
@@ -142,11 +265,21 @@
   
 }
 #recipiecarrasoul{
-  background-color: #A2D5AB;
+  /* background-color: #A2D5AB; */
 }
+
+.dp-shadow{
+  box-shadow: 3px 3px 3px 3px #bbb09b;
+}
+
 
 /* @media screen and (min-width: 1400px){
   .card, .cardContainer {
     width: 450px;
   }
 }
+ */
+ /* .container{
+   background-color: #000;
+
+ } */

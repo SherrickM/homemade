@@ -14,10 +14,8 @@
 
 ## Wire Frame
 
-![WifeFrame Landing Page](/assets/images/Screen%20Shot%202022-04-14%20at%209.43.24%20AM.png)
-![Reciepe Page](/assets/images/Screen%20Shot%202022-04-14%20at%209.44.31%20AM.png)
-![About Page](/assets/images/Screen%20Shot%202022-04-14%20at%209.44.43%20AM.png)
-![Contact Page ](/assets/images/Screen%20Shot%202022-04-14%20at%209.44.53%20AM.png)
+![WifeFrame Landing Page](./assets/images/Screen%20Shot%202022-04-22%20at%209.12.03%20PM.png)
+![Reciepe Page](./assets/images/Screen%20Shot%202022-04-22%20at%209.12.22%20PM.png)
 
 ## Mock Up
 
