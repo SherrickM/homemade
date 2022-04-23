@@ -428,43 +428,42 @@ prev2.on("click", goPrev2);
 // Adds functionality to carousel 3 that displays saved food results
 
 
-var next3 = $("#next3");
-var prev3 = $("#prev3");
-let defaultTransform3 = 0;
-function goNext3() {
-    defaultTransform3 = defaultTransform3 - 398;
-    var slider = document.getElementById("slider3");
-    if (Math.abs(defaultTransform3) >= slider.scrollWidth / 1.7) defaultTransform3 = 0;
-    slider.style.transform = "translateX(" + defaultTransform3 + "px)";
-}
-next3.on("click", goNext3);
-function goPrev3() {
-    var slider = document.getElementById("slider3");
-    if (Math.abs(defaultTransform3) === 0) defaultTransform3 = 0;
-    else defaultTransform3 = defaultTransform3 + 398;
-    slider.style.transform = "translateX(" + defaultTransform3 + "px)";
-}
-prev3.on("click", goPrev3);
+// var next3 = $("#next3");
+// var prev3 = $("#prev3");
+// let defaultTransform3 = 0;
+// function goNext3() {
+//     defaultTransform3 = defaultTransform3 - 398;
+//     var slider = document.getElementById("slider3");
+//     if (Math.abs(defaultTransform3) >= slider.scrollWidth / 1.7) defaultTransform3 = 0;
+//     slider.style.transform = "translateX(" + defaultTransform3 + "px)";
+// }
+// next3.on("click", goNext3);
+// function goPrev3() {
+//     var slider = document.getElementById("slider3");
+//     if (Math.abs(defaultTransform3) === 0) defaultTransform3 = 0;
+//     else defaultTransform3 = defaultTransform3 + 398;
+//     slider.style.transform = "translateX(" + defaultTransform3 + "px)";
+// }
+// prev3.on("click", goPrev3);
 
-// Adds functionality to carousel 4 that displays saved food results
+// // Adds functionality to carousel 4 that displays saved food results
 
 
-var next4 = $("#next4");
-var prev4 = $("#prev4");
-let defaultTransform4 = 0;
-function goNext4() {
-    defaultTransform4 = defaultTransform4 - 398;
-    var slider = document.getElementById("slider4");
-    if (Math.abs(defaultTransform4) >= slider.scrollWidth / 1.7) defaultTransform4 = 0;
-    slider.style.transform = "translateX(" + defaultTransform4 + "px)";
-}
-next4.on("click", goNext4);
-function goPrev4() {
-    var slider = document.getElementById("slider4");
-    if (Math.abs(defaultTransform4) === 0) defaultTransform4 = 0;
-    else defaultTransform4 = defaultTransform4 + 398;
-    slider.style.transform = "translateX(" + defaultTransform4 + "px)";
-}
-//prev.addEventListener("click", goPrev);
-prev4.on("click", goPrev4);
-
+// var next4 = $("#next4");
+// var prev4 = $("#prev4");
+// let defaultTransform4 = 0;
+// function goNext4() {
+//     defaultTransform4 = defaultTransform4 - 398;
+//     var slider = document.getElementById("slider4");
+//     if (Math.abs(defaultTransform4) >= slider.scrollWidth / 1.7) defaultTransform4 = 0;
+//     slider.style.transform = "translateX(" + defaultTransform4 + "px)";
+// }
+// next4.on("click", goNext4);
+// function goPrev4() {
+//     var slider = document.getElementById("slider4");
+//     if (Math.abs(defaultTransform4) === 0) defaultTransform4 = 0;
+//     else defaultTransform4 = defaultTransform4 + 398;
+//     slider.style.transform = "translateX(" + defaultTransform4 + "px)";
+// }
+// //prev.addEventListener("click", goPrev);
+// prev4.on("click", goPrev4);
