@@ -23,10 +23,56 @@
 
 ### Week 1
 
-> - Connect (2)API's to website
+#### Trevor
+
+> - Add HTML/CSS Frame Work
+> - Fixed delete buttom
+> - Added Seach functionality
+> - local storage
+
+#### Gideon
+
+> - Food API
+> - Fetch functionality
+> - updated html to connect with JS ID's
+> - local storage
+
+#### Christiana
+
+> - Drink API
+> - local storage
+
+#### Sherrick
+
 > - Complete WireFrame
-> - Confirm CSS Framework
-> - Updating Landing Page
+> - Updated ReadME
+> -
+
+### Week 2
+
+#### Trevor
+
+> - Added toggle button
+> - Drink API
+
+#### Gideon
+
+> - Continued to work with food API
+> - getting second
+> - adding missing ingredients to cards
+> - added cooking times |likes to cards
+
+#### Christiana
+
+> Drink API
+> Presentation
+
+#### Sherrick
+
+> - Updated html/css design
+> - completed ReadME
+> - added 404 error page
+> - Presentation
 
 ### Group Members
 
